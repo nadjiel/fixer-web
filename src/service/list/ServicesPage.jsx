@@ -31,7 +31,7 @@ export function ServicesPage() {
       </section>
       {/* TODO admin only */}
       <div className="fixed bottom-20 z-10 right-0 p-5">
-        <AddServiceButton />
+        <AddServiceButton category={ category } />
       </div>
       <NavBar active={"Serviços"} />
     </div>
