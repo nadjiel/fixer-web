@@ -1,29 +1,29 @@
-import { FaUser } from "react-icons/fa";
+import { BiDonateHeart, BiCommentError, BiUserCircle } from "react-icons/bi";
 import { NavBarItem } from "./NavBarItem";
 
 export function NavBar({ active }) {
   const list = [
     {
-      Icon: FaUser,
+      Icon: BiDonateHeart,
       link: "/services",
-      namePage: "services",
+      namePage: "Serviços",
     },
     {
-      Icon: FaUser,
+      Icon: BiCommentError,
       link: "/demands",
-      namePage: "demands",
+      namePage: "Demandas",
     },
     {
-      Icon: FaUser,
+      Icon: BiUserCircle,
       link: "/account",
-      namePage: "account",
+      namePage: "Conta",
     },
   ];
 
   return (
     <>
-      <div className="h-10"></div>
-      <footer className="h-10 flex flex-row mt-auto text-sm justify-between fixed bottom-0 w-full bg-white">
+      {/* <div className="h-10"></div> */}
+      <footer className="flex flex-row mt-auto text-sm justify-around fixed bottom-0 w-full bg-gray-100 rounded-t-xl">
         {list.map((item, index) => (
           <NavBarItem {...item} active={active} key={index} />
         ))}
