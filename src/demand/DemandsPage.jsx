@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { api } from "../api";
 import { NavBar } from "../navBar/NavBar";
 import { DemandList } from "./DemandList";
-import { CreateDemandButton } from "./CreateDemandButton";
+import { AddDemandButton } from "./AddDemandButton";
 
 export function DemandsPage() {
   const [demands, setDemands] = useState();
@@ -22,7 +22,7 @@ export function DemandsPage() {
       <div className="max-w-xl w-full">
         {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
         <div className="fixed bottom-20 z-10 right-0 p-5">
-          <CreateDemandButton />
+          <AddDemandButton />
         </div>
       </div>
       <NavBar active={"Demandas"} />
