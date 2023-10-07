@@ -5,6 +5,7 @@ import { DemandsPage } from "./demand/DemandsPage";
 import { DevPage } from "./dev/DevPage";
 import { ServiceCreatePage } from "./service/create/ServiceCreatePage";
 import { ServicesPage } from "./service/list/ServicesPage";
+import { ServicesAllPage } from "./service/listServices/ServicesAllPage"
 
 const router = createBrowserRouter([
   {
@@ -21,10 +22,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/services",
+    element: <ServicesAllPage />,
+  },
+  {
+    path: "/services/:service",
     element: <ServicesPage />,
   },
   {
-    path: "/services/create",
+    path: "/services/:service/create",
     element: <ServiceCreatePage />,
   },
   {
