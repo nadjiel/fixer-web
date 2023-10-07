@@ -10,6 +10,7 @@ import { ServicesAllPage } from "./service/listServices/ServicesAllPage";
 import { ServicePage } from "./service/ServicePage";
 import { AccountDemandsPage } from "./account/AccountDemandsPage";
 import { AccountLikesPage } from "./account/AccountLikesPage";
+import { EditAccountPage } from "./account/EditAccountPage";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
   {
     path: "/services/:service/create",
     element: <ServiceCreatePage />,
+  },
+  {
+    path: "/account",
+    element: <AccountPage />,
+  },
+  {
+    path: "/account/edit",
+    element: <EditAccountPage />,
   },
   {
     path: "/signIn",
