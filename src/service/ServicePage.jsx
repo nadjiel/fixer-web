@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import { IoMdArrowRoundBack } from "react-icons/io";
+import { Link } from "react-router-dom";
+import { NavBar } from "../navBar/NavBar";
 import { ServiceItem } from "./list/ServiceItem";
 
 // Receber o id
@@ -16,12 +19,19 @@ export function ServicePage() {
   }, []);
 
   return (
-    <div className="gap-2">
-      {service ? (
-          <ServiceItem service={service} expanded></ServiceItem>
-        ) : (
-          <div>carregando...</div>
-        )}
+    <div>
+      <section className="p-2">
+        {service ? (
+            <ServiceItem service={service} expanded></ServiceItem>
+          ) : (
+            <div>carregando...</div>
+          )}
+      </section>
+      <Link to={"/"} className="main-button">
+        <IoMdArrowRoundBack />
+        Voltar
+      </Link>
+      <NavBar active={"Serviços"} />
     </div>
   );
 }
