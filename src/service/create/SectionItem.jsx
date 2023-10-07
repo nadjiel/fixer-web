@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export function SectionItem({ section }) {
   const [name, setName] = useState(section.name);
-  const [content, setContent] = useState(section.content);
+  const [text, setText] = useState(section.text);
 
   return (
     <div className="p-2 rounded shadow bg-white">
@@ -17,9 +17,9 @@ export function SectionItem({ section }) {
       <input
         required
         type="text"
-        value={content}
+        value={text}
         placeholder="Conteúdo da seção"
-        onChange={(e) => setContent(e.target.value)}
+        onChange={(e) => setText(e.target.value)}
       ></input>
     </div>
   );
