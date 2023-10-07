@@ -1,6 +1,7 @@
 import { IoHeartCircle } from "react-icons/io5";
 import { NavBar } from "../navBar/NavBar";
 import { BiCommentError } from "react-icons/bi";
+import { primaryColor } from "../primaryColor";
 
 export function AccountPage() {
   return (
@@ -21,11 +22,11 @@ export function AccountPage() {
       <div className="items-center">
         <div className="font-semibold">Estatísticas</div>
         <div className="items-center gap-1 flex-row">
-          <IoHeartCircle color="#B3261E" size={26} />
+          <IoHeartCircle color={primaryColor} size={26} />
           Total de demandas apoiadas: <div className="font-medium">15</div>
         </div>
         <div className="items-center gap-1 flex-row">
-          <BiCommentError color="#B3261E" size={26} />
+          <BiCommentError color={primaryColor} size={26} />
           Total de demandas feitas: <div className="font-medium">42</div>
         </div>
       </div>
