@@ -1,7 +1,8 @@
 import { IoHeartCircle } from "react-icons/io5";
 import { NavBar } from "../navBar/NavBar";
-import { BiCommentError } from "react-icons/bi";
+import { BiCommentError, BiHeart } from "react-icons/bi";
 import { primaryColor } from "../primaryColor";
+import { Link } from "react-router-dom";
 
 export function AccountPage() {
   return (
@@ -29,6 +30,12 @@ export function AccountPage() {
           <BiCommentError color={primaryColor} size={26} />
           Total de demandas feitas: <div className="font-medium">42</div>
         </div>
+      </div>
+
+      <div className="text-primary">
+        <Link to="/" className="bg-secondary-default p-2 rounded-lg">
+          <BiHeart /> Demandas apoiadas
+        </Link>
       </div>
       <NavBar />
     </div>
