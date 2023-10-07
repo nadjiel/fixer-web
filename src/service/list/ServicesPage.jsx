@@ -1,10 +1,21 @@
 // import { CardDeamand } from "../components/CardDemand.jsx"
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { api } from "../../api";
 import { NavBar } from "../../nav/NavBar";
+import { ServiceList } from "./ServiceList";
 
 export function ServicesPage() {
   const [services, setServices] = useState();
+
+  async function getServices() {
+    const res = await api.get("/services");
+    setServices(res.data);
+  }
+
+  useEffect(() => {
+    getServices();
+  }, []);
 
   return (
     <div>
@@ -14,17 +25,11 @@ export function ServicesPage() {
       </section>
       <hr />
       <section>
-        <h1 className="text-xl">Serviços</h1>
-        <div className="">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-            veritatis dignissimos dolorum eligendi voluptas odio eveniet
-            incidunt dolores quia temporibus, iste voluptatum, ratione, corrupti
-            voluptates quisquam voluptatibus iusto eum sed?
-          </p>
-          <img src="" alt="Joinha" />
-          <p className=""></p>
-        </div>
+        {services ? (
+          <ServiceList services={services}></ServiceList>
+        ) : (
+          <div>carregando...</div>
+        )}
       </section>
       <NavBar />
     </div>

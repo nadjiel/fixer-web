@@ -4,7 +4,7 @@ export function NavBar() {
   return (
     <>
       <div className="h-10"></div>
-      <div className="h-10 flex-row mt-auto text-sm justify-between fixed bottom-0 w-full">
+      <div className="h-10 flex-row mt-auto text-sm justify-between fixed bottom-0 w-full bg-white">
         <Link className="flex-1 text-center p-2" to={"/demands"}>
           Demandas
         </Link>
