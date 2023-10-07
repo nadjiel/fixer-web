@@ -6,7 +6,7 @@ export function ServiceList({ services }) {
     <div className="gap-2">
       {services.map((service) => (
         <Link to={`/services/service/${service.id}`}> {/* TODO specify service */}
-          <ServiceItem service={service} />
+          <ServiceItem className="cursor-pointer" service={service} />
         </Link>
       ))}
     </div>
