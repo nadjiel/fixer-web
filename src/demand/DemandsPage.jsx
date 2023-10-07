@@ -21,7 +21,7 @@ export function DemandsPage() {
   return (
     <div>
       {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
-      <div className="fixed bottom-20 z-10 right-10">
+      <div className="fixed right-0 bottom-20 p-5 ">
         <CreateDemandButton />
       </div>
       <NavBar active={"Demandas"} />

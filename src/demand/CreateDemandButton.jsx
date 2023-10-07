@@ -1,12 +1,10 @@
+import { Link } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
 
 export function CreateDemandButton() {
   return (
-    <a
-      href="/demand/create"
-      className="bg-[#B3261E] text-white p-2 px-4 rounded-full"
-    >
-      <FaPlus /> Criar nova demanda
-    </a>
+    <Link to={"/demand/create"} className="px-3 py-2 bg-red-700 rounded-full text-white font-medium text-base">
+      <p>Criar nova demanda</p><FaPlus />
+    </Link>
   );
 }
