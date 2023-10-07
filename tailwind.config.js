@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#B3261E",
-        secondary: {
+        primary: "#B3261E", // Vermelho
+        secondary: { // Cinza
           default: "#EAF1F9",
           ligth: "#1F1F1F0D",
           neutral: "#F4F8FC",
