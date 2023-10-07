@@ -61,7 +61,7 @@ export function AccountPage() {
           <MdLogout /> Sair
         </Link>
       </div>
-      <NavBar />
+      <NavBar active={"Conta"} />
     </div>
   );
 }
