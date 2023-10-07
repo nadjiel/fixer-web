@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPlus } from "react-icons/fa";
 import { NavBar } from "../../nav/NavBar";
 import { SectionItem } from "./SectionItem";
 
@@ -27,7 +28,7 @@ export function ServiceCreatePage() {
         onClick={handleClick}
         className="p-2 rounded bg-blue-500 text-white"
       >
-        + Adicionar Seção
+        <FaPlus /> Adicionar Seção
       </button>
       <NavBar />
     </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPaperPlane } from "react-icons/fa";
 import { api } from "../api";
 
 export function DemandInput({ reload }) {
@@ -20,7 +21,10 @@ export function DemandInput({ reload }) {
         placeholder="Escrever demanda"
         onChange={(e) => setContent(e.target.value)}
       />
-      <button className="bg-blue-500 text-white rounded">Enviar</button>
+      <button className="main-button">
+        <FaPaperPlane />
+        Enviar
+      </button>
     </form>
   );
 }

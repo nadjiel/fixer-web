@@ -1,6 +1,6 @@
-// import { CardDeamand } from "../components/CardDemand.jsx"
-
 import { useEffect, useState } from "react";
+import { FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { api } from "../../api";
 import { NavBar } from "../../nav/NavBar";
 import { ServiceList } from "./ServiceList";
@@ -19,10 +19,11 @@ export function ServicesPage() {
 
   return (
     <div>
-      <section className="w-full bg-gray">
-        <input className="w-11/12" />
-        <button>!</button>
-      </section>
+      {/* TODO admin only */}
+      <Link to={"/services/create"} className="main-button">
+        <FaPlus />
+        Adicionar Serviço
+      </Link>
       <hr />
       <section className="p-2">
         {services ? (

@@ -13,3 +13,12 @@ html {
 .shadow {
   box-shadow: 0 0.25rem 0.5rem #0008;
 }
+
+.main-button {
+  @apply p-2 rounded bg-blue-500 text-white;
+}
+
+button,
+a {
+  @apply flex flex-row items-center gap-2;
+}
