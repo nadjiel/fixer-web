@@ -2,9 +2,9 @@ import { BsFacebook, BsGoogle } from "react-icons/bs";
 
 export function SignInPage() {
   const classButton =
-    "text-base text-primary bg-secondary-dark radius-lg gap-x-3 p-4 flex justify-center align-center";
+    "bg-primary text-base text-secondary-100 rounded-lg gap-x-3 p-4 font-medium flex justify-center align-center";
   return (
-    <div className="flex justify-center align-center gap-3">
+    <div className="flex justify-center align-center gap-3 p-5 font-medium">
       <h1 className="text-black text-base text-center">Entrar com</h1>
       <div className="gap-3">
         <button className={classButton}>

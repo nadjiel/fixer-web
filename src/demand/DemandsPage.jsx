@@ -22,7 +22,7 @@ export function DemandsPage() {
     <div className="items-center">
       <div className="max-w-xl w-full">
         {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
-        <div className="fixed bottom-20 z-10 right-10">
+        <div className="fixed bottom-20 z-10 right-0 p-5">
           <CreateDemandButton />
         </div>
       </div>
