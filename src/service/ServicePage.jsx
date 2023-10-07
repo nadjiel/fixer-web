@@ -20,18 +20,24 @@ export function ServicePage() {
 
   return (
     <div>
-      <h1 className="text-xl text-primary">{ params.service }</h1>
+      <h1 className="text-xl text-primary">{params.service}</h1>
       <section className="p-2">
         {service ? (
-            <ServiceItem service={service} expanded></ServiceItem>
-          ) : (
-            <div>carregando...</div>
-          )}
+          <ServiceItem service={service} expanded></ServiceItem>
+        ) : (
+          <div>carregando...</div>
+        )}
       </section>
-      <Link to={"./.."} className="fixed bottom-20 z-10 right-0 p-5 px-3 py-2 bg-red-700 rounded-full text-white font-medium text-base">
-        <IoMdArrowRoundBack />
-        Voltar
-      </Link>
+
+      <div className="fixed bottom-20 z-10 right-0 p-5">
+        <Link
+          to={"./.."}
+          className="p-5 px-3 py-2 bg-primary rounded-full text-white font-medium text-base"
+        >
+          <IoMdArrowRoundBack />
+          Voltar
+        </Link>
+      </div>
       <NavBar active={"Serviços"} />
     </div>
   );

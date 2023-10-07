@@ -1,14 +1,15 @@
 import { IoHeartCircle } from "react-icons/io5";
 import { primaryColor } from "../../primaryColor";
+import { Link } from "react-router-dom";
 
-export function ServiceItem({ data }) {
+export function CategoryItem({ data }) {
   return (
-    <a
-      href={`services/${data}`}
+    <Link
+      to={`/services/category/${data}`}
       className="bg-[#EAF1F9] rounded-xl py-8 px-6 w-full flex-row align-center gap-3 cursor-pointer"
     >
       <IoHeartCircle color={primaryColor} size={32} />
       <h1 className="text-xl text-primary">{data}</h1>
-    </a>
+    </Link>
   );
 }
