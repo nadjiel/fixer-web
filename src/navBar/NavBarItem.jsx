@@ -6,8 +6,8 @@ export function NavBarItem({ link, Icon, namePage, active }) {
       <Icon
         className={`${"text-2xl"} ${active === namePage ? "text-red-700" : "text-gray-700"}`}
       />
-      <p className={`${"font-medium text-sm pb-2 border-b-4"} ${
-          active === namePage ? "text-red-700 border-red-700" : "border-gray-100"
+      <p className={`${"font-medium text-sm pb-2 border-b-4 text-gray-700"} ${
+          active === namePage ? "text-primary border-primary" : "border-gray-100"
         }`}
       >
         {namePage}</p>

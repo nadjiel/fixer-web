@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import { IoMdArrowRoundBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { NavBar } from "../navBar/NavBar";
 import { ServiceItem } from "./list/ServiceItem";
-
-// Receber o id
+import { api } from "../api";
 
 export function ServicePage() {
   const [service, setService] = useState();
+  const { id } = useParams();
 
   async function getService() {
-    const res = await api.get("/service/" /* + id */);
+    const res = await api.get(`/services/service/${id}`); // TODO specify service
     setService(res.data);
   }
 
@@ -27,7 +27,7 @@ export function ServicePage() {
             <div>carregando...</div>
           )}
       </section>
-      <Link to={"/"} className="main-button">
+      <Link to={"/services/service"} className="main-button"> {/* TODO specify service */}
         <IoMdArrowRoundBack />
         Voltar
       </Link>
