@@ -8,7 +8,7 @@ import { HiOutlinePencil } from "react-icons/hi";
 
 export function AccountPage() {
   return (
-    <div className="items-center gap-10">
+    <div className="items-center gap-10 p-2">
       <div className="items-center">
         <img
           width={64}
