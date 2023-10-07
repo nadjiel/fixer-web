@@ -3,12 +3,15 @@ import { RouterProvider } from "react-router-dom";
 import router from "./router";
 
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { AuthContextProvider } from "./auth/AuthContext";
 
 function App() {
   return (
     <React.StrictMode>
-      <GoogleOAuthProvider clientId="717882556861-bdjcihh9ih7hgguvrf2pdh1o7i6hoc6k.apps.googleusercontent.com">
-        <RouterProvider router={router} />
+      <GoogleOAuthProvider clientId="717882556861-bdjcihh9ih7hgguvrf2pdh1o7i6hoc6k.apps.googleusertext.com">
+        <AuthContextProvider>
+          <RouterProvider router={router} />
+        </AuthContextProvider>
       </GoogleOAuthProvider>
     </React.StrictMode>
   );

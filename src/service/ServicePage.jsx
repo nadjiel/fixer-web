@@ -7,10 +7,10 @@ import { api } from "../api";
 
 export function ServicePage() {
   const [service, setService] = useState();
-  const { id } = useParams();
+  const params = useParams();
 
   async function getService() {
-    const res = await api.get(`/services/service/${id}`); // TODO specify service
+    const res = await api.get(`/services/${params.service}/${params.id}`);
     setService(res.data);
   }
 
@@ -20,6 +20,7 @@ export function ServicePage() {
 
   return (
     <div>
+      <h1 className="text-xl text-primary">{ params.service }</h1>
       <section className="p-2">
         {service ? (
             <ServiceItem service={service} expanded></ServiceItem>
@@ -27,7 +28,7 @@ export function ServicePage() {
             <div>carregando...</div>
           )}
       </section>
-      <Link to={"/services/service"} className="main-button"> {/* TODO specify service */}
+      <Link to={"./.."} className="fixed bottom-20 z-10 right-0 p-5 px-3 py-2 bg-red-700 rounded-full text-white font-medium text-base">
         <IoMdArrowRoundBack />
         Voltar
       </Link>

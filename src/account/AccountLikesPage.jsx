@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
+import { DemandList } from "../demand/DemandList";
 import { api } from "../api";
 import { NavBar } from "../navBar/NavBar";
-import { DemandList } from "./DemandList";
-import { AddDemandButton } from "./AddDemandButton";
 
-export function DemandsPage() {
+export function AccountLikesPage() {
   const [demands, setDemands] = useState();
 
   async function getDemands() {
+    // TODO use the real route
     const res = await api.get("/demands");
     console.log(res.data);
     setDemands(res.data);
@@ -17,15 +17,19 @@ export function DemandsPage() {
     getDemands();
   }, []);
 
+  if (!demands) {
+    return <div>carregando...</div>;
+  }
+
   return (
     <div className="items-center">
       <div className="max-w-xl w-full">
-        {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
-        <div className="fixed bottom-20 z-10 right-0 p-5">
-          <AddDemandButton />
+        <div className="gap-4">
+          <div className="text-primary text-lg">Demandas apoiadas</div>
+          <DemandList demands={demands}></DemandList>
         </div>
       </div>
-      <NavBar active={"Demandas"} />
+      <NavBar active={"Conta"} />
     </div>
   );
 }
