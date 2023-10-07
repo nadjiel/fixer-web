@@ -28,7 +28,7 @@ export function ServicePage() {
             <div>carregando...</div>
           )}
       </section>
-      <Link to={"./.."} className="main-button">
+      <Link to={"./.."} className="fixed bottom-20 z-10 right-0 p-5 px-3 py-2 bg-red-700 rounded-full text-white font-medium text-base">
         <IoMdArrowRoundBack />
         Voltar
       </Link>
