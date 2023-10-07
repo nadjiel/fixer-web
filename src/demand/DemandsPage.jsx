@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { api } from "../api";
+import { NavBar } from "../navBar/NavBar";
 import { DemandInput } from "./DemandInput";
 import { DemandList } from "./DemandList";
-import { NavBarComponent } from "../navBar/NavBarComponent";
 
 export function DemandsPage() {
   const [demands, setDemands] = useState();
@@ -21,7 +21,7 @@ export function DemandsPage() {
     <div>
       <DemandInput reload={getDemands} />
       {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
-      <NavBarComponent />
+      <NavBar active={"demands"} />
     </div>
   );
 }

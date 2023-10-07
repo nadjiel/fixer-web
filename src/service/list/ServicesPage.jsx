@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { api } from "../../api";
-import { NavBar } from "../../nav/NavBar";
+import { NavBar } from "../../navBar/NavBar";
 import { ServiceList } from "./ServiceList";
 
 export function ServicesPage() {
@@ -32,7 +32,7 @@ export function ServicesPage() {
           <div>carregando...</div>
         )}
       </section>
-      <NavBar />
+      <NavBar active={"services"} />
     </div>
   );
 }

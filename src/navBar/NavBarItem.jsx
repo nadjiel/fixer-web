@@ -1,15 +1,13 @@
-function firstLetterUppercase(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+import { Link } from "react-router-dom";
 
-export const NavBarItem = ({ link, imgSrc, namePage, isActive }) => {
-  if (isActive) {
-    console.log("Modificação a ser feita")
-  }
+export function NavBarItem({ link, Icon, namePage, active }) {
   return (
-    <a href={link} className="flex-col gap-1">
-      <img className="h-6" src={imgSrc} alt={namePage} />
-      <p>{firstLetterUppercase(namePage)}</p>
-    </a>
+    <Link to={link} className="flex-col gap-1 text-xs">
+      <Icon
+        color={active === namePage ? "red" : "gray"}
+        className="text-base"
+      />
+      <p>{namePage}</p>
+    </Link>
   );
-};
+}

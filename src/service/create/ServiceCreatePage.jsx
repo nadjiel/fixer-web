@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaCheck, FaPlus, FaTimes } from "react-icons/fa";
-import { NavBar } from "../../nav/NavBar";
+import { NavBar } from "../../navBar/NavBar";
 import { SectionItem } from "./SectionItem";
 
 export function ServiceCreatePage() {

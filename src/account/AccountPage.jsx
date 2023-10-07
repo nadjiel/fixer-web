@@ -1,5 +1,5 @@
 import { FaUser } from "react-icons/fa";
-import { NavBarComponent } from "../navBar/NavBarComponent.jsx";
+import { NavBar } from "../navBar/NavBar";
 
 export const AccountPage = () => {
   return (
@@ -12,8 +12,7 @@ export const AccountPage = () => {
       <button className="bg-blue-400 px-4 py-2">Demandas</button>
       <button className="bg-yellow-400 px-4 py-2">Editar</button>
       <button className="bg-red-600 px-4 py-2">Sair</button>
-
-      <NavBarComponent nameActive="account" />
+      <NavBar active="account" />
     </div>
   );
 };
