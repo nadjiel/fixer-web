@@ -7,10 +7,10 @@ import { api } from "../api";
 
 export function ServicePage() {
   const [service, setService] = useState();
-  const params = useParams();
+  const { id } = useParams();
 
   async function getService() {
-    const res = await api.get(`/services/${params.service}/${params.id}`);
+    const res = await api.get(`/services/${id}`);
     setService(res.data);
   }
 
@@ -18,9 +18,13 @@ export function ServicePage() {
     getService();
   }, []);
 
+  if (!service) {
+    return <div>carregando...</div>;
+  }
+
   return (
     <div>
-      <h1 className="text-xl text-primary">{params.service}</h1>
+      <h1 className="text-xl text-primary">{service.name}</h1>
       <section className="p-2">
         {service ? (
           <ServiceItem service={service} expanded></ServiceItem>
@@ -31,7 +35,7 @@ export function ServicePage() {
 
       <div className="fixed bottom-20 z-10 right-0 p-5">
         <Link
-          to={"./.."}
+          to={"/services/category/" + service.category}
           className="p-5 px-3 py-2 bg-primary rounded-full text-white font-medium text-base"
         >
           <IoMdArrowRoundBack />
