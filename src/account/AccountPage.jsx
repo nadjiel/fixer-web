@@ -33,7 +33,7 @@ export function AccountPage() {
       </div>
 
       <div className="text-primary">
-        <Link to="/" className="bg-secondary-default p-2 rounded-lg">
+        <Link to="/" className="bg-secondary-200 p-2 rounded-lg">
           <BiHeart /> Demandas apoiadas
         </Link>
       </div>

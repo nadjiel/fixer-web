@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         primary: {
-          default: "#B3261E",
+          DEFAULT: "#B3261E",
           ligth: "#F8D4D4"
         }, // Vermelho
         secondary: {
@@ -17,11 +17,11 @@ export default {
           600: "#1F1F1F",
         },
         success:  {
-          default: "#1FA161",
+          DEFAULT: "#1FA161",
           ligth: "#CAF4E0"
         },
         alert: {
-          default: "#C3A41E",
+          DEFAULT: "#C3A41E",
           ligth: "#F8EBCA"
         }
       },
