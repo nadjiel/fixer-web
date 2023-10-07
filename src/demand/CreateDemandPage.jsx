@@ -1,11 +1,11 @@
-import { AiOutlineClose, AiOutlineCheck } from "react-icons/ai"
+import { AiOutlineClose, AiOutlineCheck, AiOutlineMail, AiOutlinePhone, AiOutlineFileImage } from "react-icons/ai";
 import { NavBar } from "../navBar/NavBar";
 import { CreateDemandInput } from "./CreateDemandInput";
 
 export function CreateDemandPage() {
   return (
     <>
-      <div className="container h-max flex flex-col px-5 py-6 space-y-3">
+      <div className="container-sm h-max flex flex-col items-cente px-5 py-6 space-y-3">
         <form className="h-full flex flex-col justify-between">
           <div>
             <h4 className="text-xl text-primary font-semibold">Nova demanda</h4>
@@ -18,21 +18,24 @@ export function CreateDemandPage() {
               typeInput={"file"}
               inputId={"file"}
               placeholderValue={"jose.silva@gmail.com"}
+              Icon={AiOutlineFileImage}
             />
             <CreateDemandInput
               labelValue={"Email:"}
               typeInput={"email"}
               inputId={"email"}
               placeholderValue={"jose.silva@gmail.com"}
+              Icon={AiOutlineMail}
             />
             <CreateDemandInput
               labelValue={"Telefone:"}
               typeInput={"tel"}
               inputId={"telephone"}
               placeholderValue={"(83) 99999-9999"}
+              Icon={AiOutlinePhone}
             />
           </div>
-          <div className="flex flex-row gap-3 text-center relative -bottom-64">
+          <div className="flex flex-row gap-3 text-center mt-20">
             <button className="button-demand bg-secondary-400"><AiOutlineClose /> Cancelar</button>
             <button className="button-demand bg-primary"><AiOutlineCheck /> Salvar</button>
           </div>
