@@ -10,7 +10,7 @@ import { ServicesAllPage } from "./service/listServices/ServicesAllPage"
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ServicesPage />,
+    element: <ServicesAllPage />,
   },
   {
     path: "/dev",
