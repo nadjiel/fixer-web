@@ -1,5 +1,4 @@
 import { BiDonateHeart, BiCommentError, BiUserCircle } from "react-icons/bi";
-import { BiDonateHeart, BiCommentError, BiUserCircle } from "react-icons/bi";
 import { NavBarItem } from "./NavBarItem";
 
 export function NavBar({ active }) {
