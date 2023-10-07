@@ -10,7 +10,7 @@ export function ServicePage() {
   const params = useParams();
 
   async function getService() {
-    const res = await api.get(`/services/${params.service}/${params.id}`);
+    const res = await api.get(`/services/${params.id}`);
     setService(res.data);
   }
 

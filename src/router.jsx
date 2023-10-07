@@ -43,6 +43,10 @@ const router = createBrowserRouter([
     element: <ServicesPage />,
   },
   {
+    path: "/services/category/:category/:id",
+    element: <ServicePage />,
+  },
+  {
     path: "/services/category/:category/create",
     element: <ServiceCreatePage />,
   },
