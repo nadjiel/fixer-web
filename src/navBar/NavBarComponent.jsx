@@ -4,7 +4,7 @@ export const NavBarComponent = ({ nameActive }) => {
   const list = [
     {
       link: "/services",
-      imgSrc: "../../public/letra-s.png",
+      imgSrc: "../../public/letra-d.png",
       namePage: "services",
     },
     {
@@ -14,7 +14,7 @@ export const NavBarComponent = ({ nameActive }) => {
     },
     {
       link: "/services",
-      imgSrc: "../../public/letra-s.png",
+      imgSrc: "../../public/letra-d.png",
       namePage: "account",
     },
   ];
