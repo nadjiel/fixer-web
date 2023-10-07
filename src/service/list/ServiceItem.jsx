@@ -5,9 +5,7 @@ export function ServiceItem({ service }) {
     <div className="rounded shadow p-2">
       <div>{service.title}</div>
       <div>
-        {service.sections.map((section) => (
-          <SectionItem section={section}></SectionItem>
-        ))}
+        <SectionItem section={ service.sections[0] }></SectionItem>
       </div>
     </div>
   );
