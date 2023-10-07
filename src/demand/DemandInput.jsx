@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaPaperPlane } from "react-icons/fa";
 import { api } from "../api";
 
 export function DemandInput({ reload }) {
@@ -12,14 +13,18 @@ export function DemandInput({ reload }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="p-2 flex flex-col">
       <input
         type="text"
         value={content}
+        className="p-2"
         placeholder="Escrever demanda"
         onChange={(e) => setContent(e.target.value)}
       />
-      <button>Enviar</button>
+      <button className="main-button">
+        <FaPaperPlane />
+        Enviar
+      </button>
     </form>
   );
 }
