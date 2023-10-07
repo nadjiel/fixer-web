@@ -18,7 +18,7 @@ export function DemandsPage() {
 
   return (
     <div>
-      <DemandInput />
+      <DemandInput reload={getDemands} />
       {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
     </div>
   );
