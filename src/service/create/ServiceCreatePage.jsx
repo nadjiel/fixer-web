@@ -5,10 +5,10 @@ import { SectionItem } from "./SectionItem";
 
 export function ServiceCreatePage() {
   const [title, setTitle] = useState("");
-  const [sections, setSections] = useState([{ name: "", content: "" }]);
+  const [sections, setSections] = useState([{ name: "", text: "" }]);
 
   function handleClick() {
-    setSections((old) => [...old, { name: "", content: "" }]);
+    setSections((old) => [...old, { name: "", text: "" }]);
   }
 
   return (

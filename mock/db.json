@@ -1,67 +1,67 @@
 {
   "demands": [
     {
-      "content": "algo",
+      "text": "algo",
       "id": "D7N3Q3D",
       "likesCount": 432,
       "status": "open"
     },
     {
-      "content": "teste",
+      "text": "teste",
       "id": "0mXyMKB",
       "likesCount": 43,
       "status": "solved"
     },
     {
-      "content": "alguma coisa",
+      "text": "alguma coisa",
       "id": "0e8Jc1D",
       "likesCount": 21,
       "status": "refused"
     },
     {
-      "content": "teste",
+      "text": "teste",
       "id": "63tJV65",
       "likesCount": 10,
       "status": "open"
     },
     {
-      "content": "teste",
+      "text": "teste",
       "id": "JGdmQbY",
       "likesCount": 8,
       "status": "solved"
     },
     {
-      "content": "foi",
+      "text": "foi",
       "id": "sxlxax2",
       "likesCount": 6,
       "status": "refused"
     },
     {
-      "content": "foi",
+      "text": "foi",
       "id": "z78NJLT",
       "likesCount": 4,
       "status": "refused"
     },
     {
-      "content": "massa",
+      "text": "massa",
       "id": "iKGA0Kt",
       "likesCount": 4,
       "status": "open"
     },
     {
-      "content": "massa",
+      "text": "massa",
       "id": "KjHpaTQ",
       "likesCount": 2,
       "status": "refused"
     },
     {
-      "content": "massa",
+      "text": "massa",
       "id": "rN0B00T",
       "likesCount": 1,
       "status": "open"
     },
     {
-      "content": "tipo",
+      "text": "tipo",
       "id": "OCuvc-w",
       "likesCount": 1,
       "status": "open"
@@ -74,11 +74,11 @@
       "sections": [
         {
           "name": "horarios",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         },
         {
           "name": "documentos exigidos",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         }
       ]
     },
@@ -88,11 +88,11 @@
       "sections": [
         {
           "name": "horarios",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         },
         {
           "name": "documentos exigidos",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         }
       ]
     },
@@ -102,11 +102,11 @@
       "sections": [
         {
           "name": "horarios",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         },
         {
           "name": "documentos exigidos",
-          "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit."
         }
       ]
     }

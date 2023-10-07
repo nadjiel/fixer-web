@@ -3,11 +3,11 @@ import { FaPaperPlane } from "react-icons/fa";
 import { api } from "../api";
 
 export function DemandInput({ reload }) {
-  const [content, setContent] = useState("");
+  const [text, setText] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const res = await api.post("/demands", { content });
+    const res = await api.post("/demands", { text });
     console.log(res.data);
     reload();
   }
@@ -16,10 +16,10 @@ export function DemandInput({ reload }) {
     <form onSubmit={handleSubmit} className="p-2 flex flex-col">
       <input
         type="text"
-        value={content}
+        value={text}
         className="p-2"
         placeholder="Escrever demanda"
-        onChange={(e) => setContent(e.target.value)}
+        onChange={(e) => setText(e.target.value)}
       />
       <button className="main-button">
         <FaPaperPlane />

@@ -12,6 +12,7 @@ export function AccountPage() {
       <div className="items-center">
         <img
           width={64}
+          height={64}
           className="rounded-full"
           src="https://github.com/yolisses.png"
         />
