@@ -3,6 +3,8 @@ import { NavBar } from "../navBar/NavBar";
 import { BiCommentError, BiHeart } from "react-icons/bi";
 import { primaryColor } from "../primaryColor";
 import { Link } from "react-router-dom";
+import { MdLogout } from "react-icons/md";
+import { HiOutlinePencil } from "react-icons/hi";
 
 export function AccountPage() {
   return (
@@ -32,9 +34,30 @@ export function AccountPage() {
         </div>
       </div>
 
-      <div className="text-primary">
-        <Link to="/" className="bg-secondary-default p-2 rounded-lg">
+      <div className="text-primary gap-2">
+        <Link
+          to="/"
+          className="justify-center bg-secondary-default p-2 rounded-lg"
+        >
           <BiHeart /> Demandas apoiadas
+        </Link>{" "}
+        <Link
+          to="/"
+          className="justify-center bg-secondary-default p-2 rounded-lg"
+        >
+          <BiCommentError /> Demandas feitas
+        </Link>
+        <Link
+          to="/"
+          className="justify-center bg-secondary-default p-2 rounded-lg"
+        >
+          <HiOutlinePencil /> Editar conta
+        </Link>
+        <Link
+          to="/"
+          className="justify-center bg-primary text-white p-2 rounded-lg"
+        >
+          <MdLogout /> Sair
         </Link>
       </div>
       <NavBar />
