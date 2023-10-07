@@ -1,4 +1,4 @@
-import { IoHeartCircle, IoWarning, IoWarningOutline } from "react-icons/io5";
+import { IoHeartCircle } from "react-icons/io5";
 import { NavBar } from "../navBar/NavBar";
 import { BiCommentError } from "react-icons/bi";
 
@@ -11,10 +11,10 @@ export function AccountPage() {
           className="rounded-full"
           src="https://github.com/yolisses.png"
         />
-        <h2 className="font-bold text-xl text-[#B3261E]">
+        <h2 className="font-bold text-xl text-primary">
           Ulisses Albuquerque Pereira
         </h2>
-        <div className="text-sm text-[#B3261E]">
+        <div className="text-sm text-primary">
           albuquerque.ulisses@academico.ifpb.edu.br
         </div>
       </div>
