@@ -3,7 +3,7 @@ import { StatusLabel } from "./StatusLabe";
 
 export function DemandItem({ demand }) {
   return (
-    <div className="bg-white p-2 rounded shadow">
+    <div className="bg-secondary-ligth p-2 rounded-lg">
       <div>{demand.content}</div>
       <div className="flex-row items-start justify-between">
         <LikeButton count={demand.likesCount} />
