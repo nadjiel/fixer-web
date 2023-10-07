@@ -1,8 +1,11 @@
 // import { CardDeamand } from "../components/CardDemand.jsx"
 
-import { NavBar } from "../nav/NavBar";
+import { useState } from "react";
+import { NavBar } from "../../nav/NavBar";
 
-export const ServicesPage = () => {
+export function ServicesPage() {
+  const [services, setServices] = useState();
+
   return (
     <div>
       <section className="w-full bg-gray">
@@ -11,7 +14,7 @@ export const ServicesPage = () => {
       </section>
       <hr />
       <section>
-        <h1 className="text-xl">Demandas</h1>
+        <h1 className="text-xl">Serviços</h1>
         <div className="">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
@@ -26,4 +29,4 @@ export const ServicesPage = () => {
       <NavBar />
     </div>
   );
-};
+}
