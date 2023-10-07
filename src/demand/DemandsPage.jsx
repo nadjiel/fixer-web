@@ -19,10 +19,12 @@ export function DemandsPage() {
   }, []);
 
   return (
-    <div>
-      {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
-      <div className="fixed bottom-20 z-10 right-10">
-        <CreateDemandButton />
+    <div className="items-center">
+      <div className="max-w-xl w-full">
+        {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
+        <div className="fixed bottom-20 z-10 right-10">
+          <CreateDemandButton />
+        </div>
       </div>
       <NavBar active={"Demandas"} />
     </div>
