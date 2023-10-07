@@ -23,7 +23,10 @@ export function NavBar({ active }) {
   return (
     <>
       <div className="h-10"></div>
-      <footer className="flex flex-row mt-auto text-sm justify-around fixed bottom-0 w-full bg-gray-100 rounded-t-xl">
+      <footer
+        style={{ boxShadow: "0 0 2rem #0004" }}
+        className="flex flex-row mt-auto text-sm justify-around fixed bottom-0 w-full bg-gray-100 rounded-t-xl"
+      >
         {list.map((item, index) => (
           <NavBarItem {...item} active={active} key={index} />
         ))}
