@@ -3,6 +3,7 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
 import { NavBar } from "../navBar/NavBar";
 import { ServiceItem } from "./list/ServiceItem";
+import { api } from "../api";
 
 export function ServicePage() {
   const [service, setService] = useState();
