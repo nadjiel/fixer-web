@@ -32,7 +32,7 @@ export function ServicesPage() {
           <div>carregando...</div>
         )}
       </section>
-      <NavBar active={"services"} />
+      <NavBar active={"Serviços"} />
     </div>
   );
 }

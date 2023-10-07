@@ -21,7 +21,7 @@ export function DemandsPage() {
     <div>
       <DemandInput reload={getDemands} />
       {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
-      <NavBar active={"demands"} />
+      <NavBar active={"Demandas"} />
     </div>
   );
 }

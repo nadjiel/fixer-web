@@ -12,7 +12,7 @@ export const AccountPage = () => {
       <button className="bg-blue-400 px-4 py-2">Demandas</button>
       <button className="bg-yellow-400 px-4 py-2">Editar</button>
       <button className="bg-red-600 px-4 py-2">Sair</button>
-      <NavBar active="account" />
+      <NavBar active="Conta" />
     </div>
   );
 };
