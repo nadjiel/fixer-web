@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "mock": "json-server --watch ./mock/db.json --port 8000"
+    "mock": "json-server --watch ./mock/db.json --port 8000 --routes ./mock/routes.json"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
