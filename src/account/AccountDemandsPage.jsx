@@ -24,13 +24,12 @@ export function AccountDemandsPage() {
   return (
     <div className="items-center">
       <div className="max-w-xl w-full">
-        {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
         <div className="gap-4">
           <div className="text-primary text-lg">Demandas feitas</div>
           <DemandList demands={demands}></DemandList>
         </div>
       </div>
-      <NavBar active={"Demandas"} />
+      <NavBar active={"Conta"} />
     </div>
   );
 }
