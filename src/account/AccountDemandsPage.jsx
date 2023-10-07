@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { DemandList } from "../demand/DemandList";
 import { api } from "../api";
+import { NavBar } from "../navBar/NavBar";
 
 export function AccountDemandsPage() {
   const [demands, setDemands] = useState();
@@ -21,9 +22,15 @@ export function AccountDemandsPage() {
   }
 
   return (
-    <div className="gap-4">
-      <div className="text-primary text-lg">Demandas feitas</div>
-      <DemandList demands={demands}></DemandList>
+    <div className="items-center">
+      <div className="max-w-xl w-full">
+        {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
+        <div className="gap-4">
+          <div className="text-primary text-lg">Demandas feitas</div>
+          <DemandList demands={demands}></DemandList>
+        </div>
+      </div>
+      <NavBar active={"Demandas"} />
     </div>
   );
 }
