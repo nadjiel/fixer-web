@@ -1,4 +1,5 @@
-// import { CardDeamand } from "../components/CardDemand.jsx"
+import { CardDeamand } from "../components/CardDemand.jsx"
+import { NavBarComponent } from "../navBar/NavBarComponent.jsx";
 
 export const Services = () => {
   return (
@@ -10,17 +11,9 @@ export const Services = () => {
       <hr />
       <section>
         <h1 className="text-xl">Demandas</h1>
-        <div className="">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
-            veritatis dignissimos dolorum eligendi voluptas odio eveniet
-            incidunt dolores quia temporibus, iste voluptatum, ratione, corrupti
-            voluptates quisquam voluptatibus iusto eum sed?
-          </p>
-          <img src="" alt="Joinha" />
-          <p className=""></p>
-        </div>
+        <CardDeamand />
       </section>
+      <NavBarComponent nameActive="demandas" />
     </div>
   );
 };
