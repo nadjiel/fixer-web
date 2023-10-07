@@ -6,7 +6,7 @@ export function CategoryItem({ data }) {
   return (
     <Link
       to={`/services/category/${data}`}
-      className="bg-[#EAF1F9] rounded-xl py-8 px-6 w-full flex-row align-center gap-3 cursor-pointer"
+      className="bg-[#EAF1F9] font-medium rounded-xl py-8 px-6 w-full flex-row align-center gap-3 cursor-pointer"
     >
       <IoHeartCircle color={primaryColor} size={32} />
       <h1 className="text-xl text-primary">{data}</h1>
