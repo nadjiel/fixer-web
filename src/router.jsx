@@ -8,6 +8,7 @@ import { ServicesPage } from "./service/list/ServicesPage";
 import { ServicesAllPage } from "./service/listServices/ServicesAllPage";
 import { ServicePage } from "./service/ServicePage";
 import { CreateDemandPage } from "./demand/CreateDemandPage";
+import { AccountDemandsPage } from "./account/AccountDemandsPage";
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
   {
     path: "/signIn",
     element: <SignInPage />,
+  },
+  {
+    path: "/accountDemands",
+    element: <AccountDemandsPage />,
   },
 ]);
 

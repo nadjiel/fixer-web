@@ -40,9 +40,9 @@ export function AccountPage() {
           className="justify-center bg-secondary-default p-2 rounded-lg"
         >
           <BiHeart /> Demandas apoiadas
-        </Link>{" "}
+        </Link>
         <Link
-          to="/"
+          to="/accountDemands"
           className="justify-center bg-secondary-default p-2 rounded-lg"
         >
           <BiCommentError /> Demandas feitas
