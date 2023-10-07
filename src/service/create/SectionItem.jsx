@@ -5,7 +5,7 @@ export function SectionItem({ section }) {
   const [content, setContent] = useState(section.content);
 
   return (
-    <div className="p-2 rounded shadow-lg bg-white">
+    <div className="p-2 rounded shadow bg-white">
       <input
         type="text"
         value={name}

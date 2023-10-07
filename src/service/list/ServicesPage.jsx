@@ -24,7 +24,7 @@ export function ServicesPage() {
         <button>!</button>
       </section>
       <hr />
-      <section>
+      <section className="p-2">
         {services ? (
           <ServiceList services={services}></ServiceList>
         ) : (
