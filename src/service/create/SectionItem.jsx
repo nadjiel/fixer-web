@@ -7,6 +7,7 @@ export function SectionItem({ section }) {
   return (
     <div className="p-2 rounded shadow bg-white">
       <input
+        required
         type="text"
         value={name}
         className="font-medium"
@@ -14,6 +15,7 @@ export function SectionItem({ section }) {
         onChange={(e) => setName(e.target.value)}
       ></input>
       <input
+        required
         type="text"
         value={content}
         placeholder="Conteúdo da seção"
