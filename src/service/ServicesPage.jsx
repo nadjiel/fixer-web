@@ -1,5 +1,7 @@
 // import { CardDeamand } from "../components/CardDemand.jsx"
 
+import { NavBar } from "../nav/NavBar";
+
 export const Services = () => {
   return (
     <div>
@@ -21,6 +23,7 @@ export const Services = () => {
           <p className=""></p>
         </div>
       </section>
+      <NavBar />
     </div>
   );
 };

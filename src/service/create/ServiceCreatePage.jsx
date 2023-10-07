@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavBar } from "../../nav/NavBar";
 import { SectionItem } from "./SectionItem";
 
 export function ServiceCreatePage() {
@@ -28,6 +29,7 @@ export function ServiceCreatePage() {
       >
         + Adicionar Seção
       </button>
+      <NavBar />
     </div>
   );
 }

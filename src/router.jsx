@@ -18,6 +18,10 @@ const router = createBrowserRouter([
     element: <DemandsPage />,
   },
   {
+    path: "/services",
+    element: <Services />,
+  },
+  {
     path: "/services/create",
     element: <ServiceCreatePage />,
   },
