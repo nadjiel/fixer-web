@@ -1,17 +1,16 @@
 import { useEffect, useState } from "react";
-import { FaPlus } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { api } from "../../api";
 import { NavBar } from "../../navBar/NavBar";
 import { ServiceList } from "./ServiceList";
 import { AddServiceButton } from "./AddServiceButton";
 
 export function ServicesPage() {
-  const [services, setServices] = useState();
   const { service } = useParams();
+  const [services, setServices] = useState();
 
   async function getServices() {
-    const res = await api.get(`/services/${service}`);
+    const res = await api.get(`/services?category=${service}`);
     setServices(res.data);
   }
 

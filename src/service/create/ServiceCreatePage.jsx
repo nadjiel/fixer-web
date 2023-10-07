@@ -37,7 +37,7 @@ export function ServiceCreatePage() {
           <FaCheck /> Salvar
         </button>
       </div>
-      <NavBar />
+      <NavBar active={"Serviços"} />
     </div>
   );
 }
