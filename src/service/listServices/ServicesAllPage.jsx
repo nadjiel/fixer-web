@@ -1,5 +1,5 @@
 import { ServiceItem } from "./ServiceItem";
-import { NavBar } from "../../navBar/NavBar"
+import { NavBar } from "../../navBar/NavBar";
 
 export function ServicesAllPage() {
   const listServices = ["Saúde", "Desenvolvimento", "Educação"];
@@ -13,7 +13,7 @@ export function ServicesAllPage() {
           ))}
         </div>
       </div>
-      <NavBar active={"services"} />
+      <NavBar active={"Serviços"} />
     </>
   );
 }
