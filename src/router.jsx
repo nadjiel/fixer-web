@@ -6,7 +6,7 @@ import { DevPage } from "./dev/DevPage";
 import { ServiceCreatePage } from "./service/create/ServiceCreatePage";
 import { ServicesPage } from "./service/list/ServicesPage";
 import { CreateDemandPage } from "./demand/CreateDemandPage";
-import { ServicesAllPage } from "./service/listServices/ServicesAllPage";
+import { ServiceCategoriesPage } from "./service/listServices/ServiceCategoriesPage";
 import { ServicePage } from "./service/ServicePage";
 import { AccountDemandsPage } from "./account/AccountDemandsPage";
 import { AccountLikesPage } from "./account/AccountLikesPage";
@@ -14,7 +14,7 @@ import { AccountLikesPage } from "./account/AccountLikesPage";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ServicesAllPage />,
+    element: <ServiceCategoriesPage />,
   },
   {
     path: "/dev",
@@ -30,18 +30,18 @@ const router = createBrowserRouter([
   },
   {
     path: "/services",
-    element: <ServicesAllPage />,
+    element: <ServiceCategoriesPage />,
   },
   {
-    path: "/services/:service",
+    path: "/services/:category",
     element: <ServicesPage />,
   },
   {
-    path: "/services/:service/:id",
+    path: "/services/:category/:id",
     element: <ServicePage />,
   },
   {
-    path: "/services/:service/create",
+    path: "/services/:category/create",
     element: <ServiceCreatePage />,
   },
   {

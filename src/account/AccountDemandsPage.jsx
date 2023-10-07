@@ -8,7 +8,7 @@ export function AccountDemandsPage() {
 
   async function getDemands() {
     // TODO use the real route
-    const res = await api.get("/demands");
+    const res = await api.get("/users/4/demands");
     console.log(res.data);
     setDemands(res.data);
   }
