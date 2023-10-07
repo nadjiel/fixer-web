@@ -38,9 +38,9 @@ export function AccountPage() {
         <Link
           to="/"
           className="justify-center bg-secondary-200 p-2 rounded-lg"
-        />
+        >
           <BiHeart /> Demandas apoiadas
-        </Link>{" "}
+        </Link>
         <Link
           to="/"
           className="justify-center bg-secondary-default p-2 rounded-lg"
