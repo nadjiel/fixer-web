@@ -4,13 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#B3261E", // Vermelho
-        secondary: { // Cinza
-          default: "#EAF1F9",
-          ligth: "#1F1F1F0D",
-          neutral: "#F4F8FC",
-          dark: "#D8E0F3",
+        primary: {
+          default: "#B3261E",
+          ligth: "#F8D4D4"
+        }, // Vermelho
+        secondary: {
+          100: "#FFFFFF",
+          200: "#F4F8FC",
+          300: "#E0E3E7",
+          400: "#AFB4BA",
+          500: "#666666",
+          600: "#1F1F1F",
         },
+        success:  {
+          default: "#1FA161",
+          ligth: "#CAF4E0"
+        },
+        alert: {
+          default: "#C3A41E",
+          ligth: "#F8EBCA"
+        }
       },
       fontFamily: {
         fira: ["Fira Sans"],
