@@ -9,7 +9,6 @@ export function DemandsPage() {
 
   async function getDemands() {
     const res = await api.get("/demands");
-    console.log(res.data);
     setDemands(res.data);
   }
 
