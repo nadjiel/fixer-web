@@ -1,7 +1,10 @@
 import { IoHeartCircle } from "react-icons/io5";
 import { NavBar } from "../navBar/NavBar";
-import { BiCommentError } from "react-icons/bi";
+import { BiCommentError, BiHeart } from "react-icons/bi";
 import { primaryColor } from "../primaryColor";
+import { Link } from "react-router-dom";
+import { MdLogout } from "react-icons/md";
+import { HiOutlinePencil } from "react-icons/hi";
 
 export function AccountPage() {
   return (
@@ -29,6 +32,33 @@ export function AccountPage() {
           <BiCommentError color={primaryColor} size={26} />
           Total de demandas feitas: <div className="font-medium">42</div>
         </div>
+      </div>
+
+      <div className="text-primary gap-2">
+        <Link
+          to="/"
+          className="justify-center bg-secondary-200 p-2 rounded-lg"
+        />
+          <BiHeart /> Demandas apoiadas
+        </Link>{" "}
+        <Link
+          to="/"
+          className="justify-center bg-secondary-default p-2 rounded-lg"
+        >
+          <BiCommentError /> Demandas feitas
+        </Link>
+        <Link
+          to="/"
+          className="justify-center bg-secondary-default p-2 rounded-lg"
+        >
+          <HiOutlinePencil /> Editar conta
+        </Link>
+        <Link
+          to="/"
+          className="justify-center bg-primary text-white p-2 rounded-lg"
+        >
+          <MdLogout /> Sair
+        </Link>
       </div>
       <NavBar />
     </div>
