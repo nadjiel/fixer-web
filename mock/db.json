@@ -110,5 +110,14 @@
         }
       ]
     }
+  ],
+  "users": [
+    {
+      "id": "4",
+      "name": "John Doe",
+      "email": "johndoe@email.com",
+      "demandsCount": 4,
+      "likesCount": 32
+    }
   ]
 }
