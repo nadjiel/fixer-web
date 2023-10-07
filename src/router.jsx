@@ -45,12 +45,12 @@ const router = createBrowserRouter([
     element: <ServiceCreatePage />,
   },
   {
-    path: "/account",
-    element: <AccountPage />,
-  },
-  {
     path: "/signIn",
     element: <SignInPage />,
+  },
+  {
+    path: "/account",
+    element: <AccountPage />,
   },
   {
     path: "/accountDemands",
