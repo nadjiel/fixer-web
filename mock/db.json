@@ -114,30 +114,6 @@
       ]
     }
   ],
-  "categorias": [
-    { "name": "Saúde", "id": 1 },
-    { "name": "Desenvolvimento", "id": 2 },
-    { "name": "Educação", "id": 3 },
-    { "name": "Governo e Articulação Política", "id": 4 },
-    { "name": "Juventude", "id": 5 },
-    { "name": "esporte e lazer", "id": 6 },
-    { "name": "Meio Ambiente", "id": 7 },
-    { "name": "Planejamento", "id": 8 },
-    { "name": "Políticas públicas para as mulheres", "id": 9 },
-    { "name": "Representação em João Pessoa", "id": 10 },
-    {
-      "name": "Superintendência Cajazeirense de Transporte e Trânsito",
-      "id": 11
-    },
-    { "name": "Controladoria Geral do Município", "id": 12 },
-    { "name": "Instituto de Previdência e Assistência Social", "id": 13 },
-    { "name": "Procuradoria Geral do Município", "id": 14 },
-    { "name": "Fazenda Pública", "id": 15 },
-    { "name": "Administração", "id": 16 },
-    { "name": "Cultura e Turismo", "id": 17 },
-    { "name": "Desenvolvimento Econômico e Empreendedorismo", "id": 18 },
-    { "name": "Desenvolvimento Humano", "id": 19 }
-  ],
   "users": [
     {
       "id": "4",
