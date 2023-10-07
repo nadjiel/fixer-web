@@ -9,6 +9,7 @@ import { CreateDemandPage } from "./demand/CreateDemandPage";
 import { ServicesAllPage } from "./service/listServices/ServicesAllPage";
 import { ServicePage } from "./service/ServicePage";
 import { AccountDemandsPage } from "./account/AccountDemandsPage";
+import { AccountLikesPage } from "./account/AccountLikesPage";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
   {
     path: "/accountDemands",
     element: <AccountDemandsPage />,
+  },
+  {
+    path: "/accountLikes",
+    element: <AccountLikesPage />,
   },
 ]);
 

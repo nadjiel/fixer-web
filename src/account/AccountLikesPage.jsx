@@ -1,0 +1,35 @@
+import { useEffect, useState } from "react";
+import { DemandList } from "../demand/DemandList";
+import { api } from "../api";
+import { NavBar } from "../navBar/NavBar";
+
+export function AccountLikesPage() {
+  const [demands, setDemands] = useState();
+
+  async function getDemands() {
+    // TODO use the real route
+    const res = await api.get("/demands");
+    console.log(res.data);
+    setDemands(res.data);
+  }
+
+  useEffect(() => {
+    getDemands();
+  }, []);
+
+  if (!demands) {
+    return <div>carregando...</div>;
+  }
+
+  return (
+    <div className="items-center">
+      <div className="max-w-xl w-full">
+        <div className="gap-4">
+          <div className="text-primary text-lg">Demandas apoiadas</div>
+          <DemandList demands={demands}></DemandList>
+        </div>
+      </div>
+      <NavBar active={"Conta"} />
+    </div>
+  );
+}

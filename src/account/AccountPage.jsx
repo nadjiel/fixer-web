@@ -36,7 +36,7 @@ export function AccountPage() {
 
       <div className="text-primary gap-2">
         <Link
-          to="/"
+          to="/accountLikes"
           className="justify-center bg-secondary-200 p-2 rounded-lg"
         >
           <BiHeart /> Demandas apoiadas
