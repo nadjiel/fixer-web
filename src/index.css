@@ -16,6 +16,10 @@ html {
   box-shadow: 0 0.25rem 0.5rem #0004;
 }
 
+.shadow-nav {
+  box-shadow: 0 -15px 40px -12px rgb(0 0 0 / 0.25);
+}
+
 .main-button {
   @apply p-2 rounded bg-blue-500 text-white;
 }
@@ -23,4 +27,12 @@ html {
 button,
 a {
   @apply flex flex-row items-center gap-2;
+}
+
+.input-demand {
+  @apply px-3 py-2 bg-secondary-200 rounded-3xl text-sm font-normal text-secondary-400
+}
+
+.button-demand {
+  @apply flex-grow rounded-3xl px-3 py-2 text-secondary-100 font-normal text-sm justify-center
 }

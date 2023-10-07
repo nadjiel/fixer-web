@@ -7,11 +7,26 @@ export function CreateDemandInput({
   return (
     <>
       <div>
-        <label htmlFor={inputId}>{labelValue}</label>
+        <label
+          htmlFor={inputId}
+          className="text-base font-normal text-primary font-fira mt-3"
+        >
+          {labelValue}
+        </label>
         {typeInput === "file" ? (
-          <input type={typeInput} accept="image/*" id={inputId} />
+          <input
+            type={typeInput}
+            accept="image/*"
+            id={inputId}
+            className="input-demand"
+          />
         ) : (
-          <input type={typeInput} placeholder={placeholderValue} id={inputId} />
+          <input
+            type={typeInput}
+            placeholder={placeholderValue}
+            id={inputId}
+            className="input-demand"
+          />
         )}
       </div>
     </>

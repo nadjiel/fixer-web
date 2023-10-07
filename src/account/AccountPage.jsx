@@ -50,7 +50,7 @@ export function AccountPage() {
           <BiCommentError /> Demandas feitas
         </Link>
         <Link
-          to="/"
+          to="/account/edit"
           className="justify-center bg-secondary-default p-2 rounded-lg"
         >
           <HiOutlinePencil /> Editar conta
