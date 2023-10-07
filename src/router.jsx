@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { DemandsPage } from "./demand/DemandsPage";
 import { DevPage } from "./dev/DevPage";
-import { Services } from "./service/ServicesPage.jsx";
+import { Services, ServicesPage } from "./service/ServicesPage.jsx";
 import { ServiceCreatePage } from "./service/create/ServiceCreatePage";
 
 const router = createBrowserRouter([
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/services",
-    element: <Services />,
+    element: <ServicesPage />,
   },
   {
     path: "/services/create",

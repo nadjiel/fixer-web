@@ -2,7 +2,7 @@
 
 import { NavBar } from "../nav/NavBar";
 
-export const Services = () => {
+export const ServicesPage = () => {
   return (
     <div>
       <section className="w-full bg-gray">
