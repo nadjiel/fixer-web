@@ -22,7 +22,7 @@ export function AccountPage() {
           albuquerque.ulisses@academico.ifpb.edu.br
         </div>
       </div>
-      <div className="items-center">
+      <div className="items-center gap-2">
         <div className="font-semibold">Estatísticas</div>
         <div className="items-center gap-1 flex-row">
           <IoHeartCircle color={primaryColor} size={26} />
@@ -36,13 +36,13 @@ export function AccountPage() {
 
       <div className="text-primary gap-2">
         <Link
-          to="/"
+          to="/accountLikes"
           className="justify-center bg-secondary-200 p-2 rounded-lg"
-        />
+        >
           <BiHeart /> Demandas apoiadas
-        </Link>{" "}
+        </Link>
         <Link
-          to="/"
+          to="/accountDemands"
           className="justify-center bg-secondary-default p-2 rounded-lg"
         >
           <BiCommentError /> Demandas feitas
