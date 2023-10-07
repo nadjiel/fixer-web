@@ -1,0 +1,25 @@
+import { useEffect, useState } from "react";
+import { api } from "../api";
+import { DemandInput } from "../components/DemandInput";
+import { DemandList } from "../components/DemandList";
+
+export function DemandsPage() {
+  const [demands, setDemands] = useState();
+
+  async function getDemands() {
+    const res = await api.get("/demands");
+    console.log(res.data);
+    setDemands(res.data);
+  }
+
+  useEffect(() => {
+    getDemands();
+  }, []);
+
+  return (
+    <div>
+      <DemandInput />
+      {demands ? <DemandList demands={demands} /> : <div>carregando</div>}
+    </div>
+  );
+}
