@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaCheck, FaPlus, FaTimes } from "react-icons/fa";
 import { NavBar } from "../../navBar/NavBar";
 import { SectionItem } from "./SectionItem";
+import { api } from "../../api";
 
 export function ServiceCreatePage() {
   const [title, setTitle] = useState("");
@@ -11,8 +12,20 @@ export function ServiceCreatePage() {
     setSections((old) => [...old, { name: "", text: "" }]);
   }
 
+  async function saveService() {
+    try {
+      const body = { title, sections }
+      const result = await api.post("/services", body)
+      if (result.status !== 201) {
+        throw new Error("Ocorreu um error na requisição")
+      }
+    } catch (err) {
+      console.error()
+    }
+  }
+
   return (
-    <div className="bg-gray-200 p-2 h-screen gap-2">
+    <div className="bg-gray-200 p-2 pb-10 h-screen gap-2">
       <input
         type="text"
         value={title}
@@ -33,7 +46,7 @@ export function ServiceCreatePage() {
         <button className="p-2 rounded text-white flex-1 bg-red-500">
           <FaTimes /> Cancelar
         </button>
-        <button className="p-2 rounded text-white flex-1 bg-green-500">
+        <button className="p-2 rounded text-white flex-1 bg-green-500" onClick={saveService()}>
           <FaCheck /> Salvar
         </button>
       </div>
