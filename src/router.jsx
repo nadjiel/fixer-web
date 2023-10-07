@@ -10,6 +10,7 @@ import { ServiceCategoriesPage } from "./service/listServices/ServiceCategoriesP
 import { ServicePage } from "./service/ServicePage";
 import { AccountDemandsPage } from "./account/AccountDemandsPage";
 import { AccountLikesPage } from "./account/AccountLikesPage";
+import { DemandPage } from "./demand/DemandPage";
 import { EditAccountPage } from "./account/EditAccountPage";
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
     element: <DemandsPage />,
   },
   {
+    path: "/demands/:id",
+    element: <DemandPage />,
+  },
+  {
     path: "/demand/create",
     element: <CreateDemandPage />,
   },
@@ -34,16 +39,20 @@ const router = createBrowserRouter([
     element: <ServiceCategoriesPage />,
   },
   {
-    path: "/services/:category",
+    path: "/services/category/:category",
     element: <ServicesPage />,
   },
   {
-    path: "/services/:category/:id",
+    path: "/services/category/:category/:id",
     element: <ServicePage />,
   },
   {
-    path: "/services/:category/create",
+    path: "/services/category/:category/create",
     element: <ServiceCreatePage />,
+  },
+  {
+    path: "/services/:id",
+    element: <ServicePage />,
   },
   {
     path: "/account",

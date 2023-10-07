@@ -71,6 +71,7 @@
     {
       "id": "2",
       "title": "Dentista",
+      "category": "Saúde",
       "sections": [
         {
           "name": "horarios",
@@ -84,6 +85,7 @@
     },
     {
       "id": "3",
+      "category": "Saúde",
       "title": "Ortopedista",
       "sections": [
         {
@@ -97,7 +99,8 @@
       ]
     },
     {
-      "id": "3",
+      "id": "4",
+      "category": "Saúde",
       "title": "Pediatra",
       "sections": [
         {
