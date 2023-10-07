@@ -6,11 +6,11 @@ import { ServiceList } from "./ServiceList";
 import { AddServiceButton } from "./AddServiceButton";
 
 export function ServicesPage() {
-  const { service } = useParams();
+  const { category } = useParams();
   const [services, setServices] = useState();
 
   async function getServices() {
-    const res = await api.get(`/services?category=${service}`);
+    const res = await api.get(`/services?category=${category}`);
     setServices(res.data);
   }
 
@@ -22,7 +22,7 @@ export function ServicesPage() {
     <div>
       <hr />
       <section className="p-2">
-        <h1 className="text-xl text-primary">{service}</h1>
+        <h1 className="text-xl text-primary">{category}</h1>
         {services ? (
           <ServiceList services={services}></ServiceList>
         ) : (

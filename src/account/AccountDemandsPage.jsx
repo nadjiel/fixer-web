@@ -2,13 +2,15 @@ import { useEffect, useState } from "react";
 import { DemandList } from "../demand/DemandList";
 import { api } from "../api";
 import { NavBar } from "../navBar/NavBar";
+import { useAuth } from "../auth/AuthContext";
 
 export function AccountDemandsPage() {
+  const { user } = useAuth();
   const [demands, setDemands] = useState();
 
   async function getDemands() {
     // TODO use the real route
-    const res = await api.get("/users/4/demands");
+    const res = await api.get("/demands?userId=" + user.id);
     console.log(res.data);
     setDemands(res.data);
   }
