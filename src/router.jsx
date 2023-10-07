@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { DemandsPage } from "./pages/DemandsPage.jsx";
-import { DevPage } from "./pages/DevPage";
+import { DemandsPage } from "./demand/DemandsPage";
+import { DevPage } from "./dev/DevPage";
 import { Services } from "./pages/Services.jsx";
 
 const router = createBrowserRouter([

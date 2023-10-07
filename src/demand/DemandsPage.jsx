@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { api } from "../api";
-import { DemandInput } from "../components/DemandInput";
-import { DemandList } from "../components/DemandList";
+import { DemandInput } from "./DemandInput";
+import { DemandList } from "./DemandList";
 
 export function DemandsPage() {
   const [demands, setDemands] = useState();
