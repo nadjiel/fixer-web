@@ -22,7 +22,7 @@ export function AccountPage() {
           albuquerque.ulisses@academico.ifpb.edu.br
         </div>
       </div>
-      <div className="items-center">
+      <div className="items-center gap-2">
         <div className="font-semibold">Estatísticas</div>
         <div className="items-center gap-1 flex-row">
           <IoHeartCircle color={primaryColor} size={26} />
