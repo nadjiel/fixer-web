@@ -7,17 +7,27 @@ export function ServiceCreatePage() {
     { name: "horarios", content: "de 0 as 11 horas" },
   ]);
 
+  function handleClick() {
+    setSections((old) => [...old, { name: "", content: "" }]);
+  }
+
   return (
-    <div>
+    <div className="bg-gray-200 p-2 h-screen gap-2">
       <input
         type="text"
         value={title}
-        placeholder="Preencher título"
-        className="font-bold text-lg"
+        placeholder="Nome do serviço"
+        className="font-bold text-lg p-2 rounded shadow"
       />
       {sections.map((section) => (
         <SectionItem section={section}></SectionItem>
       ))}
+      <button
+        onClick={handleClick}
+        className="p-2 rounded bg-blue-500 text-white"
+      >
+        + Adicionar Seção
+      </button>
     </div>
   );
 }
