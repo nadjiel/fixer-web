@@ -1,28 +1,21 @@
 import { BiDonateHeart, BiCommentError, BiUserCircle } from "react-icons/bi";
-import { BiDonateHeart, BiCommentError, BiUserCircle } from "react-icons/bi";
 import { NavBarItem } from "./NavBarItem";
 
 export function NavBar({ active }) {
   const list = [
     {
       Icon: BiDonateHeart,
-      Icon: BiDonateHeart,
       link: "/services",
-      namePage: "Serviços",
       namePage: "Serviços",
     },
     {
-      Icon: BiCommentError,
       Icon: BiCommentError,
       link: "/demands",
       namePage: "Demandas",
-      namePage: "Demandas",
     },
     {
       Icon: BiUserCircle,
-      Icon: BiUserCircle,
       link: "/account",
-      namePage: "Conta",
       namePage: "Conta",
     },
   ];
