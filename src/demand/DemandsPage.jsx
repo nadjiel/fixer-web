@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../api";
 import { NavBar } from "../navBar/NavBar";
-import { DemandInput } from "./DemandInput";
 import { DemandList } from "./DemandList";
 import { CreateDemandButton } from "./CreateDemandButton";
 
