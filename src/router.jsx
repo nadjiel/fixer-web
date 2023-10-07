@@ -5,9 +5,9 @@ import { DemandsPage } from "./demand/DemandsPage";
 import { DevPage } from "./dev/DevPage";
 import { ServiceCreatePage } from "./service/create/ServiceCreatePage";
 import { ServicesPage } from "./service/list/ServicesPage";
+import { CreateDemandPage } from "./demand/CreateDemandPage";
 import { ServicesAllPage } from "./service/listServices/ServicesAllPage";
 import { ServicePage } from "./service/ServicePage";
-import { CreateDemandPage } from "./demand/CreateDemandPage";
 
 const router = createBrowserRouter([
   {
