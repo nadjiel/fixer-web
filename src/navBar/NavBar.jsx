@@ -5,23 +5,17 @@ export function NavBar({ active }) {
   const list = [
     {
       Icon: BiDonateHeart,
-      Icon: BiDonateHeart,
       link: "/services",
-      namePage: "Serviços",
       namePage: "Serviços",
     },
     {
-      Icon: BiCommentError,
       Icon: BiCommentError,
       link: "/demands",
       namePage: "Demandas",
-      namePage: "Demandas",
     },
     {
       Icon: BiUserCircle,
-      Icon: BiUserCircle,
       link: "/account",
-      namePage: "Conta",
       namePage: "Conta",
     },
   ];
