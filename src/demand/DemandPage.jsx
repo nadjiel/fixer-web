@@ -37,6 +37,7 @@ export function DemandPage() {
       <NavBar active={"Demandas"} />
       <ResourceButtons
         toEdit={toEdit}
+        hideEdit={true}
         onDeleteConfirm={handleDeleteConfirm}
       ></ResourceButtons>
     </div>
