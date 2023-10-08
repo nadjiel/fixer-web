@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { AccountPage } from "./account/AccountPage";
 import { SignInPage } from "./auth/SignInPage";
+import { SignUpPage } from "./auth/SignUpPage.jsx";
 import { DemandsPage } from "./demand/DemandsPage";
 import { DevPage } from "./dev/DevPage";
 import { ServiceCreatePage } from "./service/create/ServiceCreatePage";
@@ -14,6 +15,7 @@ import { DemandPage } from "./demand/DemandPage";
 import { EditAccountPage } from "./account/EditAccountPage";
 import { CreateDemandPage } from "./demand/CreateDemandPage";
 import { ServiceEditPage } from "./service/edit/ServiceEditPage";
+
 
 const router = createBrowserRouter([
   {
@@ -77,8 +79,8 @@ const router = createBrowserRouter([
     element: <SignInPage />,
   },
   {
-    path: "/account",
-    element: <AccountPage />,
+    path: "/signUp",
+    element: <SignUpPage />,
   },
   {
     path: "/accountDemands",

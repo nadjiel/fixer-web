@@ -31,9 +31,9 @@ export function ButtonsLogin({ typePage, callback }) {
 
       <Link
         className="bg-primary-ligth text-sm text-primary rounded-lg p-4 font-medium flex justify-center align-center mt-2 mb-3"
-        href={typePage == "login" ? "signOut" : "signIn"}
+        href={typePage == "login" ?  "/signIn" : "/signUp"}
       >
-        <p>{typePage == "login" ? "Criar conta" : "Fazer login"}</p>
+        <p>{typePage != "login" ? "Fazer login" : "Criar conta"}</p>
       </Link>
 
       <button
@@ -45,7 +45,7 @@ export function ButtonsLogin({ typePage, callback }) {
         }
         onClick={callback}
       >
-        Entrar
+        {typePage == "login" ? "Entrar" : "Criar"}
       </button>
     </>
   );
