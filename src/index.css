@@ -32,3 +32,7 @@ a {
 .input-demand {
   @apply pl-10 pr-4 py-1 bg-secondary-200 rounded-full font-normal;
 }
+
+.big-button {
+  @apply flex-1 text-white p-2 rounded-lg justify-center;
+}

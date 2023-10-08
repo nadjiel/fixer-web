@@ -62,10 +62,10 @@ export function CreateDemandPage() {
             />
           </div>
           <div className="flex flex-row gap-3 text-center mt-20">
-            <Link to="./.." className="button-demand bg-secondary-400">
+            <Link to="./.." className="big-button bg-secondary-500 ">
               <AiOutlineClose /> Cancelar
             </Link>
-            <button className="button-demand bg-primary">
+            <button className="big-button bg-primary ">
               <AiOutlineCheck /> Salvar
             </button>
           </div>
