@@ -9,7 +9,9 @@ export function DemandsPage() {
 
   async function getDemands() {
     const res = await api.get("/demands");
-    setDemands(res.data);
+    const data =  res.data;
+    const sorted = data.sort((a, b) => b.likesCount - a.likesCount);
+    setDemands(sorted);
   }
 
   useEffect(() => {
