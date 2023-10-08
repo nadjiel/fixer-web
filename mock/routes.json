@@ -1,4 +1,4 @@
 {
   "/api/*": "/$1",
-  "/me": "/users/4"
+  "/users/me": "/users/4"
 }

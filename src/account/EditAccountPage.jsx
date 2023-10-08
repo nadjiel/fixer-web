@@ -1,4 +1,10 @@
-import { AiOutlineClose, AiOutlineCheck, AiOutlineUser, AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
+import {
+  AiOutlineClose,
+  AiOutlineCheck,
+  AiOutlineUser,
+  AiOutlineMail,
+  AiOutlinePhone,
+} from "react-icons/ai";
 
 import { EditInput } from "./EditInput";
 import { EditButton } from "./EditButton";
@@ -13,14 +19,14 @@ export function EditAccountPage() {
           <EditInput
             idInput="nameId"
             inputName="Nome:"
-            value="José da Silva Sousa Júnior"
+            value="Ulisses Albquerque"
             typeInput="text"
             Icon={AiOutlineUser}
           />
           <EditInput
             idInput="emailId"
             inputName="E-mail:"
-            value="jose.silva@gmail.com"
+            value="ulisses@email.com"
             typeInput="text"
             Icon={AiOutlineMail}
           />
@@ -47,7 +53,7 @@ export function EditAccountPage() {
           </div>
         </div>
       </div>
-      <NavBar active={"Conta"}/>
+      <NavBar active={"Conta"} />
     </>
   );
 }
