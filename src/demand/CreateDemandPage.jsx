@@ -7,16 +7,18 @@ import {
 } from "react-icons/ai";
 import { NavBar } from "../navBar/NavBar";
 import { CreateDemandInput } from "./CreateDemandInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../api";
 
 export function CreateDemandPage() {
+  const navigate = useNavigate();
   const [text, setText] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
     api.post("/demands/", { text });
+    navigate("/demands");
   }
 
   return (
