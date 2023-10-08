@@ -19,6 +19,7 @@ export function CreateDemandPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await api.post("/demands/", { text });
+    // alert(`Seu Código: ${res.data.code}`)
     navigate("/demands/" + res.data.id);
   }
 
@@ -37,7 +38,7 @@ export function CreateDemandPage() {
               value={text}
               placeholder="Escreva sua demanda"
               onChange={(e) => setText(e.target.value)}
-              className="p-2 text-base font-normal h-32 border-2 border-secondary-400 rounded-xl my-3"
+              className="p-2 text-base font-normal h-32 border-2 border-secondary-400 rounded-lg my-3 bg-secondary-200"
             ></textarea>
             <CreateDemandInput
               labelValue={"Adicionar imagem:"}

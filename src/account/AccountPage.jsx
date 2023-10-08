@@ -20,7 +20,7 @@ export function AccountPage() {
   }, []);
 
   if (!user) {
-    return <div>carregando...</div>;
+    return window.location.assign("/signIn");
   }
 
   return (
