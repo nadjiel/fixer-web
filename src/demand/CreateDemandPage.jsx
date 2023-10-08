@@ -31,7 +31,7 @@ export function CreateDemandPage() {
         >
           <div>
             <h4 className="text-xl text-primary font-semibold">
-              Editars demanda
+              Editar demanda
             </h4>
             <textarea
               value={text}
