@@ -19,6 +19,7 @@ export function CreateDemandPage() {
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await api.post("/demands/", { text });
+    // alert(`Seu Código: ${res.data.code}`)
     navigate("/demands/" + res.data.id);
   }
 

@@ -43,6 +43,10 @@ const router = createBrowserRouter([
     element: <DemandPage />,
   },
   {
+    path: "/demands/code/:code",
+    element: <DemandPage />,
+  },
+  {
     path: "/services",
     element: <ServiceCategoriesPage />,
   },
