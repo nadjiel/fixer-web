@@ -1,23 +1,26 @@
 import { BsFacebook, BsGoogle } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export function ButtonsLogin({ typePage, callback }) {
-  const classButton =
+  const classButtonWork =
     "bg-primary text-base text-secondary-100 rounded-lg gap-x-3 p-4 font-medium flex justify-center align-center";
+  const classButtonNetwork =
+    "flex justify-center align-center border-secondary-400 border border-solid text-secondary-400 p-4 gap-3 rounded-lg w-1/2";
   return (
     <>
       <h2 className="text-secondary-500 text-base text-center font-medium">
         {typePage == "login" ? "Entrar com" : "Criar com"}
       </h2>
 
-      <div className="container-lg gap-4">
-        <button className={classButton}>
+      <div className="flex-row gap-3 mt-3 mb-8">
+        <Link to="/account" className={classButtonNetwork}>
           <BsGoogle />
           <p>Google</p>
-        </button>
-        <button className={classButton}>
+        </Link>
+        <Link to="/account" className={classButtonNetwork}>
           <BsFacebook />
           <p>Facebook</p>
-        </button>
+        </Link>
       </div>
 
       <h2 className="text-secondary-500 text-base text-center font-normal">
@@ -26,14 +29,24 @@ export function ButtonsLogin({ typePage, callback }) {
           : "Já possui uma conta?"}
       </h2>
 
-      <a
-        className="bg-primary-ligth text-sm text-primary rounded-lg p-4 font-medium flex justify-center align-center"
+      <Link
+        className="bg-primary-ligth text-sm text-primary rounded-lg p-4 font-medium flex justify-center align-center mt-2 mb-3"
         href={typePage == "login" ? "signOut" : "signIn"}
       >
         <p>{typePage == "login" ? "Criar conta" : "Fazer login"}</p>
-      </a>
+      </Link>
 
-      <button className={classButton} data-cy={typePage == "login" ? "data-cy='login-save'" : "data-cy='register-save'"} onClick={callback}>Entrar</button>
+      <button
+        className={classButtonWork}
+        data-cy={
+          typePage == "login"
+            ? "data-cy='login-save'"
+            : "data-cy='register-save'"
+        }
+        onClick={callback}
+      >
+        Entrar
+      </button>
     </>
   );
 }
