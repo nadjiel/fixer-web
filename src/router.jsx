@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     element: <DemandPage />,
   },
   {
-    path: "/demand/create",
+    path: "/demands/create",
     element: <CreateDemandPage />,
   },
   {

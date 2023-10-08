@@ -4,7 +4,7 @@ import { FaPlus } from "react-icons/fa";
 export function AddDemandButton() {
   return (
     <Link
-      to={"/demand/create"}
+      to={"/demands/create"}
       className="px-3 py-2 bg-red-700 rounded-full text-white font-medium text-base"
     >
       <FaPlus /> Adicionar demanda
