@@ -5,7 +5,7 @@ import { StatusLabel } from "./StatusLabe";
 export function DemandItem({ demand }) {
   return (
     <Link
-      to={`/demands/${demand.id}`}
+      to={`/demands/${demand.code}`}
       className="bg-secondary-200 p-2 rounded-lg cursor-pointer flex flex-col items-start hover:bg-black/10"
     >
       <div>{demand.text}</div>

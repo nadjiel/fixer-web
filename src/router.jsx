@@ -27,11 +27,11 @@ const router = createBrowserRouter([
     element: <DemandsPage />,
   },
   {
-    path: "/demands/:id",
+    path: "/demands/:code",
     element: <DemandPage />,
   },
   {
-    path: "/demand/create",
+    path: "/demands/create",
     element: <CreateDemandPage />,
   },
   {
