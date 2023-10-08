@@ -5,12 +5,12 @@ import { StatusLabel } from "./StatusLabe";
 export function DemandItem({ demand }) {
   return (
     <Link
-      to={`/demands/${demand.code}`}
-      className="bg-secondary-200 p-2 rounded-lg cursor-pointer flex flex-col items-start hover:bg-black/10"
+      to={`/demands/${demand.id}`}
+      className="bg-secondary-200 p-2 rounded-lg cursor-pointer flex flex-col items-start hover:outline outline-gray-300 outline-2 hover:z-10"
     >
       <div>{demand.text}</div>
       <div className="flex-row items-start justify-between self-stretch">
-        <LikeButton count={demand.likesCount} />
+        <LikeButton count={demand.likesCount} demand={demand} />
         <StatusLabel status={demand.status}></StatusLabel>
       </div>
     </Link>

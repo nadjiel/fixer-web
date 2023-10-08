@@ -30,9 +30,18 @@ a {
 }
 
 .input-demand {
+<<<<<<< HEAD
   @apply px-11 py-3 bg-secondary-200 rounded-lg text-sm font-normal text-secondary-600 placeholder:text-secondary-400 border-2 border-secondary-400 -mt-6
 }
 
 .button-demand {
   @apply flex-grow rounded-lg p-3 text-secondary-100 font-normal text-sm justify-center
 }
+=======
+  @apply pl-10 pr-4 py-1 bg-secondary-200 rounded-full font-normal;
+}
+
+.big-button {
+  @apply flex-1 text-white p-2 rounded-lg justify-center;
+}
+>>>>>>> 9624532520f87a037a4d1b5c33f45f0fd3c29ad7

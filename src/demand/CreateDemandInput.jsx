@@ -3,7 +3,7 @@ export function CreateDemandInput({
   typeInput,
   inputId,
   placeholderValue,
-  Icon
+  Icon,
 }) {
   return (
     <>

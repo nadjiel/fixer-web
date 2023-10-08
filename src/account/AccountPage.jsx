@@ -11,7 +11,7 @@ export function AccountPage() {
   const [user, setUser] = useState();
 
   async function getUser() {
-    const res = await api.get("/me");
+    const res = await api.get("/me/");
     setUser(res.data);
   }
 

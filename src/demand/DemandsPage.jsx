@@ -8,8 +8,10 @@ export function DemandsPage() {
   const [demands, setDemands] = useState();
 
   async function getDemands() {
-    const res = await api.get("/demands");
-    setDemands(res.data);
+    const res = await api.get("/demands/");
+    const data =  res.data;
+    const sorted = data.sort((a, b) => b.likesCount - a.likesCount);
+    setDemands(sorted);
   }
 
   useEffect(() => {

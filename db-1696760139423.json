@@ -65,10 +65,6 @@
       "id": "OCuvc-w",
       "likesCount": 259,
       "status": "open"
-    },
-    {
-      "text": "boa",
-      "id": "zf1Btja"
     }
   ],
   "services": [
@@ -396,31 +392,14 @@
     },
     {
       "title": "teste",
+      "category": "Saúde",
       "sections": [
         {
           "name": "feito por ulisses",
           "text": "com hacks"
-        },
-        {
-          "name": "Alguma outra coisa",
-          "text": "massa"
         }
       ],
-      "id": "2VgjVfK"
-    },
-    {
-      "title": "teste",
-      "sections": [
-        {
-          "name": "feito por ulisses",
-          "text": "com hacks"
-        },
-        {
-          "name": "alguma coisa",
-          "text": ""
-        }
-      ],
-      "id": "h5te1Q1"
+      "id": "d4Gm28j"
     }
   ],
   "users": [
