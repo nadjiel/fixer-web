@@ -8,8 +8,8 @@ export function ServiceItem({ service, expanded }) {
         <div className="text-xl text-primary">{service.title}</div>
         <div className="rounded-xl w-full align-center gap-3s">
           {expanded ? (
-            service.sections.map((section) => (
-              <SectionItem section={section}></SectionItem>
+            service?.sections.map((section, index) => (
+              <SectionItem section={section} key={index}></SectionItem>
             ))
           ) : (
             <SectionItem section={service.sections[0]}></SectionItem>
