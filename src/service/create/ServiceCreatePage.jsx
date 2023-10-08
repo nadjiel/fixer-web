@@ -59,17 +59,16 @@ export function ServiceCreatePage() {
           key={index}
         ></SectionItem>
       ))}
-      <button
-        onClick={handleClick}
-        className="p-2 rounded bg-blue-500 text-white"
-      >
-        <FaPlus /> Adicionar Seção
-      </button>
+      <div>
+        <button onClick={handleClick} className="big-button bg-gray-500">
+          <FaPlus /> Adicionar Seção
+        </button>
+      </div>
       <div className="flex-row gap-2 mt-auto">
-        <button className="p-2 rounded text-white flex-1 bg-red-500">
+        <button className="big-button bg-gray-500">
           <FaTimes /> Cancelar
         </button>
-        <button onClick={saveService} className="p-2 rounded text-white flex-1 bg-green-500">
+        <button onClick={saveService} className="big-button bg-red-600">
           <FaCheck /> Salvar
         </button>
       </div>

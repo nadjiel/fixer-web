@@ -5,13 +5,14 @@ import { DemandsPage } from "./demand/DemandsPage";
 import { DevPage } from "./dev/DevPage";
 import { ServiceCreatePage } from "./service/create/ServiceCreatePage";
 import { ServicesPage } from "./service/list/ServicesPage";
-import { CreateDemandPage } from "./demand/CreateDemandPage";
+import { EditDemandPage } from "./demand/EditDemandPage";
 import { ServiceCategoriesPage } from "./service/listServices/ServiceCategoriesPage";
 import { ServicePage } from "./service/ServicePage";
 import { AccountDemandsPage } from "./account/AccountDemandsPage";
 import { AccountLikesPage } from "./account/AccountLikesPage";
 import { DemandPage } from "./demand/DemandPage";
 import { EditAccountPage } from "./account/EditAccountPage";
+import { CreateDemandPage } from "./demand/CreateDemandPage";
 
 const router = createBrowserRouter([
   {
@@ -27,12 +28,16 @@ const router = createBrowserRouter([
     element: <DemandsPage />,
   },
   {
-    path: "/demands/:code",
-    element: <DemandPage />,
+    path: "/demands/:id/edit",
+    element: <EditDemandPage />,
   },
   {
     path: "/demands/create",
     element: <CreateDemandPage />,
+  },
+  {
+    path: "/demands/:id",
+    element: <DemandPage />,
   },
   {
     path: "/services",

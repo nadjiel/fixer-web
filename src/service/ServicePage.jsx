@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
-import { IoMdArrowRoundBack } from "react-icons/io";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { NavBar } from "../navBar/NavBar";
 import { ServiceItem } from "./list/ServiceItem";
 import { api } from "../api";
+import { ResourceButtons } from "../common/ResourceButtons";
 
 export function ServicePage() {
   const [service, setService] = useState();
   const { id } = useParams();
+  const navigate = useNavigate();
+
+  const toEdit = `/services/${id}/edit`;
 
   async function getService() {
     const res = await api.get(`/services/${id}`);
     setService(res.data);
+  }
+
+  async function handleDeleteConfirm() {
+    await api.delete("/services/" + id);
+    navigate("/services");
   }
 
   useEffect(() => {
@@ -33,15 +41,10 @@ export function ServicePage() {
         )}
       </section>
 
-      <div className="fixed bottom-20 z-10 right-0 p-5">
-        <Link
-          to={"/services/category/" + service.category}
-          className="p-5 px-3 py-2 bg-primary rounded-full text-white font-medium text-base"
-        >
-          <IoMdArrowRoundBack />
-          Voltar
-        </Link>
-      </div>
+      <ResourceButtons
+        toEdit={toEdit}
+        onDeleteConfirm={handleDeleteConfirm}
+      ></ResourceButtons>
       <NavBar active={"Serviços"} />
     </div>
   );

@@ -7,19 +7,36 @@ import {
 } from "react-icons/ai";
 import { NavBar } from "../navBar/NavBar";
 import { CreateDemandInput } from "./CreateDemandInput";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { api } from "../api";
 
-export function CreateDemandPage() {
+export function EditDemandPage() {
+  const { id } = useParams();
   const [text, setText] = useState("");
+  const [demand, setDemand] = useState();
+
+  async function getDemand() {
+    const res = await api.get(`/demands/${id}`);
+    console.log("here");
+    setDemand(res.data);
+    setText(res.data.text);
+  }
+
+  useEffect(() => {
+    getDemand();
+  }, []);
 
   const navigate = useNavigate();
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    const res = await api.post("/demands/", { text });
-    navigate("/demands/" + res.data.id);
+    api.patch("/demands/" + id, { text });
+    navigate("/demands/" + id);
+  }
+
+  if (!demand) {
+    return <div>carregando</div>;
   }
 
   return (
@@ -62,10 +79,10 @@ export function CreateDemandPage() {
             />
           </div>
           <div className="flex flex-row gap-3 text-center mt-20">
-            <Link to="./.." className="big-button bg-secondary-500 ">
+            <Link to="./.." className="big-button bg-secondary-400">
               <AiOutlineClose /> Cancelar
             </Link>
-            <button className="big-button bg-primary ">
+            <button className="big-button bg-primary">
               <AiOutlineCheck /> Salvar
             </button>
           </div>

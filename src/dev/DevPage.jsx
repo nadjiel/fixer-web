@@ -1,3 +1,9 @@
 export function DevPage() {
-  return <div>hello dev. test things here</div>;
+  return (
+    <div>
+      <textarea>
+        algo <span className="font-bold">al</span>
+      </textarea>
+    </div>
+  );
 }
