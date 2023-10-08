@@ -8,7 +8,6 @@ import {
 import { NavBar } from "../navBar/NavBar";
 import { CreateDemandInput } from "./CreateDemandInput";
 import { Link } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 export function CreateDemandPage() {
   return (
