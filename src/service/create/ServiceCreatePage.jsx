@@ -3,9 +3,10 @@ import { FaCheck, FaPlus, FaTimes } from "react-icons/fa";
 import { NavBar } from "../../navBar/NavBar";
 import { SectionItem } from "./SectionItem";
 import { api } from "../../api";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 export function ServiceCreatePage() {
+  const { category } = useParams();
   const [title, setTitle] = useState("");
   const emptySection = { name: "", text: "" };
   const [sections, setSections] = useState([{ ...emptySection }]);
@@ -17,21 +18,17 @@ export function ServiceCreatePage() {
   }
 
   async function saveService() {
-    try {
-      const filteredSections = sections.filter(
-        (section) => section.name || section.text
-      );
-      const body = { title, sections: filteredSections };
-      const result = await api.post("/services", body);
-
-      if (result.status == 201) {
-        const { id } = await result.data;
-        navigate(`/services/${id}`);
-      }
-    } catch (err) {
-      // <ModalError />
-      console.error(err.message);
-    }
+    const filteredSections = sections.filter(
+      (section) => section.name || section.text
+    );
+    const service = {
+      title,
+      category,
+      sections: filteredSections,
+    };
+    const res = await api.post("/services", service);
+    const { id } = res.data;
+    navigate(`/services/${id}`);
   }
 
   return (
@@ -56,9 +53,12 @@ export function ServiceCreatePage() {
         </button>
       </div>
       <div className="flex-row gap-2 mt-auto">
-        <button className="big-button bg-gray-500">
+        <Link
+          to={"/services/category/" + category}
+          className="big-button bg-gray-500"
+        >
           <FaTimes /> Cancelar
-        </button>
+        </Link>
         <button onClick={saveService} className="big-button bg-red-600">
           <FaCheck /> Salvar
         </button>

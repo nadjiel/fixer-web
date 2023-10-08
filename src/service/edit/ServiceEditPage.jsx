@@ -6,7 +6,6 @@ import { api } from "../../api";
 import { useNavigate, useParams } from "react-router-dom";
 
 export function ServiceEditPage() {
-  const [service, setService] = useState();
   const { id } = useParams();
 
   const [title, setTitle] = useState("");
@@ -21,9 +20,9 @@ export function ServiceEditPage() {
 
   async function getService() {
     const res = await api.get("/services/" + id);
-    setService(res.data);
-    setTitle(res.data.title);
-    setSections(res.data.sections);
+    const service = res.data;
+    setTitle(service.title);
+    setSections(service.sections);
   }
 
   useEffect(() => {
@@ -31,21 +30,13 @@ export function ServiceEditPage() {
   }, []);
 
   async function saveService() {
-    try {
-      const filteredSections = sections.filter(
-        (section) => section.name || section.text
-      );
-      const body = { title, sections: filteredSections };
-      const result = await api.post("/services", body);
-
-      if (result.status == 201) {
-        const { id } = await result.data;
-        navigate(`/services/${id}`);
-      }
-    } catch (err) {
-      // <ModalError />
-      console.error(err.message);
-    }
+    const filteredSections = sections.filter(
+      (section) => section.name || section.text
+    );
+    const service = { title, sections: filteredSections };
+    const res = await api.post("/services", service);
+    const { id } = res.data;
+    navigate(`/services/${id}`);
   }
 
   return (
