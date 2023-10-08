@@ -58,7 +58,7 @@ export function AccountPage() {
           <HiOutlinePencil /> Editar conta
         </Link>
         <Link
-          to="/"
+          to="/signIn"
           className="justify-center bg-primary text-white p-2 rounded-lg"
         >
           <MdLogout /> Sair
