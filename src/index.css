@@ -30,9 +30,5 @@ a {
 }
 
 .input-demand {
-  @apply px-11 py-2 bg-secondary-200 rounded-3xl text-sm font-normal text-secondary-400
-}
-
-.button-demand {
-  @apply flex-grow rounded-3xl px-3 py-2 text-secondary-100 font-normal text-sm justify-center
+  @apply pl-10 pr-4 py-1 bg-secondary-200 rounded-full font-normal;
 }

@@ -3,18 +3,21 @@ export function CreateDemandInput({
   typeInput,
   inputId,
   placeholderValue,
-  Icon
+  Icon,
 }) {
   return (
     <>
-      <div>
+      <div className="relative py-2">
         <label
           htmlFor={inputId}
-          className="text-base font-normal text-primary font-fira mt-3"
+          className="text-base font-normal text-primary font-fira"
         >
           {labelValue}
         </label>
-        <Icon size={24} className={"relative -bottom-8 left-3 text-secondary-400"}/>
+        <Icon
+          size={24}
+          className="absolute bottom-3 left-3 text-secondary-400"
+        />
         {typeInput === "file" ? (
           <input
             type={typeInput}
