@@ -3,7 +3,7 @@ import { FaPen, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { DeleteModal } from "../demand/DeleteModal";
 
-export function ResourceButtons({ toEdit, onDeleteConfirm }) {
+export function ResourceButtons({ toEdit, onDeleteConfirm, hideEdit }) {
   const [open, setOpen] = useState(false);
 
   function close() {
@@ -18,12 +18,15 @@ export function ResourceButtons({ toEdit, onDeleteConfirm }) {
       >
         <FaTrash /> Apagar
       </button>
-      <Link
-        to={toEdit}
-        className="px-3 py-2 bg-secondary-400 rounded-full font-medium text-base"
-      >
-        <FaPen /> Editar
-      </Link>
+
+      {!hideEdit && (
+        <Link
+          to={toEdit}
+          className="px-3 py-2 bg-secondary-400 rounded-full font-medium text-base"
+        >
+          <FaPen /> Editar
+        </Link>
+      )}
       {open && (
         <DeleteModal isOpen={true} close={close} onConfirm={onDeleteConfirm} />
       )}

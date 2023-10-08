@@ -7,8 +7,12 @@ import { Link } from "react-router-dom";
 import { login } from "./loginFunction";
 import { ButtonsLogin } from "./ButtonsLogin";
 
-import { IoMdLock } from "react-icons/io"
-import { AiOutlineMail, AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { IoMdLock } from "react-icons/io";
+import {
+  AiOutlineMail,
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+} from "react-icons/ai";
 
 export function SignInPage() {
   const schema = yup.object({
@@ -32,7 +36,7 @@ export function SignInPage() {
   const callbackLogin = async () => {
     try {
       const { email, password } = getValues();
-      const response = await login({ email, password });
+      const response = await login({ username: email, password });
       console.log(response);
       if (response.access) {
         navigate("/account");
@@ -54,6 +58,13 @@ export function SignInPage() {
     }
   };
 
+  const oi = (a, event) => {
+    event.preventDefault()
+    console.log(a)
+    console.log("bhbhb");
+    return event
+  }
+
   return (
     <div className="w-full min-h-screen flex justify-center align-center gap-3 p-5 font-medium">
       <div>
@@ -67,6 +78,7 @@ export function SignInPage() {
             Icon={AiOutlineMail}
             placeholder="Digite aqui seu e-mail..."
             errors={errors}
+            name="email"
             register={register}
             data-cy="login-email"
           />
@@ -77,6 +89,7 @@ export function SignInPage() {
             placeholder="Digite sua senha..."
             errors={errors}
             register={register}
+            name="password"
             data-cy="login-password"
           />
           <Link
@@ -86,9 +99,7 @@ export function SignInPage() {
             Esqueci a senha
           </Link>
 
-          <ButtonsLogin
-            typePage="login"
-          />
+          <ButtonsLogin typePage="login" />
         </form>
       </div>
     </div>
