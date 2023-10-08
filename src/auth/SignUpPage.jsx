@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
 import { ButtonsLogin } from "./ButtonsLogin";
 import { register as registerService } from "./registerFunction"
 
@@ -61,7 +60,7 @@ export function SignUpPage() {
     <div className="w-full min-h-screen flex justify-center align-center gap-3 p-5 font-medium">
       <div>
         <h1 className="text-primary text-base align-center mb-6 font-semibold text-center">
-          Register
+          Cadastro
         </h1>
         <form onSubmit={handleSubmit(callbackRegister)} className="flex flex-col">
           <EditInput
@@ -72,7 +71,6 @@ export function SignUpPage() {
             errors={errors}
             name="email"
             register={register}
-            data-cy="login-email"
           />
           <EditInput
             inputName="Senha"
@@ -82,7 +80,6 @@ export function SignUpPage() {
             errors={errors}
             register={register}
             name="password"
-            data-cy="login-password"
           />
           <EditInput
             inputName="Confirmar senha"
@@ -92,7 +89,6 @@ export function SignUpPage() {
             errors={errors}
             register={register}
             name="password_confirm"
-            data-cy="login-password_confirm"
           />
 
           <ButtonsLogin typePage="register" callback={callbackRegister} />

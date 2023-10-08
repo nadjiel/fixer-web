@@ -3,9 +3,6 @@ import { api } from "../api";
 export async function register ({ username, email, password, phone, picture }) {
     const data = { email, password, username, phone, picture };
 
-    data.phone ? data.phone : ""
-    data.phone ? data.phone : ""
-
     const response = await api.post(`/users/`, data);
     const content = await response.data;
 

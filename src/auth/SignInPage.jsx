@@ -6,6 +6,10 @@ import * as yup from "yup";
 import { Link } from "react-router-dom";
 import { login } from "./loginFunction";
 import { ButtonsLogin } from "./ButtonsLogin";
+import { timeTokenAccess, timeTokenRefresh } from "./config";
+import Cookies from 'js-cookie';
+
+import { useAuth } from "./AuthContext";
 
 import { IoMdLock } from "react-icons/io";
 import {
@@ -32,12 +36,16 @@ export function SignInPage() {
   } = useForm({ resolver: yupResolver(schema) });
 
   const navigate = useNavigate();
+  const { setUserId } = useAuth();
 
   const callbackLogin = async () => {
     try {
       const { email, password } = getValues();
       const response = await login({ username: email, password });
       if (response.token) {
+        Cookies.set('access', response.token.access, { expires: timeTokenAccess })
+        Cookies.set('refresh', response.token.refresh, { expires: timeTokenRefresh })
+        setUserId(response.id)
         navigate("/account");
       }
     } catch (error) {
