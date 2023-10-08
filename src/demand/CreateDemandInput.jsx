@@ -14,7 +14,7 @@ export function CreateDemandInput({
         >
           {labelValue}
         </label>
-        <Icon size={24} className={"relative -bottom-8 left-3 text-secondary-400"}/>
+        <Icon size={24} className={"relative -bottom-3 left-3 text-secondary-400"}/>
         {typeInput === "file" ? (
           <input
             type={typeInput}
