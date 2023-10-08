@@ -1,12 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaCheck, FaPlus, FaTimes } from "react-icons/fa";
 import { NavBar } from "../../navBar/NavBar";
-import { SectionItem } from "./SectionItem";
+import { SectionItem } from "../create/SectionItem";
 import { api } from "../../api";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-export function ServiceCreatePage() {
-  const { category } = useParams();
+export function ServiceEditPage() {
+  const { id } = useParams();
+
   const [title, setTitle] = useState("");
   const emptySection = { name: "", text: "" };
   const [sections, setSections] = useState([{ ...emptySection }]);
@@ -17,15 +18,22 @@ export function ServiceCreatePage() {
     setSections((old) => [...old, { ...emptySection }]);
   }
 
+  async function getService() {
+    const res = await api.get("/services/" + id);
+    const service = res.data;
+    setTitle(service.title);
+    setSections(service.sections);
+  }
+
+  useEffect(() => {
+    getService();
+  }, []);
+
   async function saveService() {
     const filteredSections = sections.filter(
       (section) => section.name || section.text
     );
-    const service = {
-      title,
-      category,
-      sections: filteredSections,
-    };
+    const service = { title, sections: filteredSections };
     const res = await api.post("/services", service);
     const { id } = res.data;
     navigate(`/services/${id}`);
@@ -53,12 +61,9 @@ export function ServiceCreatePage() {
         </button>
       </div>
       <div className="flex-row gap-2 mt-auto">
-        <Link
-          to={"/services/category/" + category}
-          className="big-button bg-gray-500"
-        >
+        <button className="big-button bg-gray-500">
           <FaTimes /> Cancelar
-        </Link>
+        </button>
         <button onClick={saveService} className="big-button bg-red-600">
           <FaCheck /> Salvar
         </button>
