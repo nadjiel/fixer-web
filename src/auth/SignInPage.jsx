@@ -7,16 +7,10 @@ import { Link } from "react-router-dom";
 import { login } from "./loginFunction";
 import { ButtonsLogin } from "./ButtonsLogin";
 import { timeTokenAccess, timeTokenRefresh } from "./config";
-import Cookies from 'js-cookie';
-
+import Cookies from "js-cookie";
 import { useAuth } from "./AuthContext";
-
 import { IoMdLock } from "react-icons/io";
-import {
-  AiOutlineMail,
-  AiOutlineEye,
-  AiOutlineEyeInvisible,
-} from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 
 export function SignInPage() {
   const schema = yup.object({
@@ -43,9 +37,13 @@ export function SignInPage() {
       const { email, password } = getValues();
       const response = await login({ username: email, password });
       if (response.token) {
-        Cookies.set('access', response.token.access, { expires: timeTokenAccess })
-        Cookies.set('refresh', response.token.refresh, { expires: timeTokenRefresh })
-        setUserId(response.id)
+        Cookies.set("access", response.token.access, {
+          expires: timeTokenAccess,
+        });
+        Cookies.set("refresh", response.token.refresh, {
+          expires: timeTokenRefresh,
+        });
+        setUserId(response.id);
         navigate("/account");
       }
     } catch (error) {
@@ -64,7 +62,7 @@ export function SignInPage() {
       }
     }
   };
-  
+
   return (
     <div className="w-full min-h-screen flex justify-center align-center gap-3 p-5 font-medium">
       <div>
