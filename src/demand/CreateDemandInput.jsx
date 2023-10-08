@@ -6,34 +6,29 @@ export function CreateDemandInput({
   Icon,
 }) {
   return (
-    <>
-      <div className="relative py-2">
-        <label
-          htmlFor={inputId}
-          className="text-base font-normal text-primary font-fira"
-        >
-          {labelValue}
-        </label>
-        <Icon
-          size={24}
-          className="absolute bottom-3 left-3 text-secondary-400"
+    <div className="relative py-2">
+      <label
+        htmlFor={inputId}
+        className="text-base font-normal text-primary font-fira"
+      >
+        {labelValue}
+      </label>
+      <Icon size={24} className="absolute bottom-3 left-3 text-secondary-400" />
+      {typeInput === "file" ? (
+        <input
+          type={typeInput}
+          accept="image/*"
+          id={inputId}
+          className="input-demand"
         />
-        {typeInput === "file" ? (
-          <input
-            type={typeInput}
-            accept="image/*"
-            id={inputId}
-            className="input-demand"
-          />
-        ) : (
-          <input
-            type={typeInput}
-            placeholder={placeholderValue}
-            id={inputId}
-            className="input-demand"
-          />
-        )}
-      </div>
-    </>
+      ) : (
+        <input
+          type={typeInput}
+          placeholder={placeholderValue}
+          id={inputId}
+          className="input-demand"
+        />
+      )}
+    </div>
   );
 }
