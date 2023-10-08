@@ -174,6 +174,66 @@
       ]
     },
     {
+      "id": "7",
+      "category": "Coleta seletiva de lixo",
+      "title": "Meio ambiente",
+      "sections": [
+        {
+          "name": "Horários",
+          "text": "Todas as quartas e sábados das 8:00 às 12:00."
+        },
+        {
+          "name": "Local",
+          "text": "Bairros Aurora e João Ramalho."
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "category": "Aula de yoga no parque",
+      "title": "Esporte e Lazer",
+      "sections": [
+        {
+          "name": "Horários",
+          "text": "Às terças e quintas, das 18:00 às 19:30."
+        },
+        {
+          "name": "Local",
+          "text": "Parque Municipal."
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "category": "Bazar beneficente",
+      "title": "Desenvolvimento Humano",
+      "sections": [
+        {
+          "name": "Horário",
+          "text": "Sábado, das 9:00 às 16:00."
+        },
+        {
+          "name": "Local",
+          "text": "Centro Comunitário do bairro Crispim Almeida."
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "category": "Curso de culinária saudável",
+      "title": "Educação",
+      "sections": [
+        {
+          "name": "Horários",
+          "text": "Todas as quartas às 19:00."
+        },
+        {
+          "name": "Local",
+          "text": "Escola Integral Senador Ronaldo Rodolfo."
+        }
+      ]
+    },
+    {
       "title": "dasdbja",
       "sections": [
         {
