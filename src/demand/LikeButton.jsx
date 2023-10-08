@@ -1,7 +1,6 @@
 import { IoHeartCircle } from "react-icons/io5";
 import { primaryColor } from "../primaryColor";
 import { useState } from "react";
-import { BiHeart, BiHeartCircle } from "react-icons/bi";
 import { FaHeart } from "react-icons/fa";
 
 export function LikeButton({ count }) {
