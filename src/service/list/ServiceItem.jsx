@@ -4,9 +4,9 @@ import { SectionItem } from "./SectionItem";
 export function ServiceItem({ service, expanded }) {
   return (
     <Link to={`/services/${service.id}`}>
-      <div className="bg-[#EAF1F9] rounded-xl py-8 px-6 w-full align-center gap-3">
+      <div className="bg-secondary-200 rounded-xl p-2 w-full align-center">
         <div className="text-xl text-primary">{service.title}</div>
-        <div className="bg-[#F4F8FC] rounded-xl py-8 px-6 w-full align-center gap-3s">
+        <div className="rounded-xl w-full align-center gap-3s">
           {expanded ? (
             service?.sections.map((section, index) => (
               <SectionItem section={section} key={index}></SectionItem>

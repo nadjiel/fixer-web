@@ -23,11 +23,11 @@ export function ServiceCreatePage() {
   async function saveService() {
     try {
       const filterSection = sections.map((obj) => {
-        console.log(obj)
+        console.log(obj);
         const element = document.querySelector(`#${obj.id}`);
-        const name = element.querySelector("[name='section-name']").value
+        const name = element.querySelector("[name='section-name']").value;
         const text = element.querySelector("[name='section-text']").value;
-        return {name, text};
+        return { name, text };
       });
 
       const body = { title, sections: filterSection };
@@ -53,7 +53,11 @@ export function ServiceCreatePage() {
         className="font-bold text-lg p-2 rounded shadow"
       />
       {sections.map((section, index) => (
-        <SectionItem section={section} id={section.id} key={index}></SectionItem>
+        <SectionItem
+          section={section}
+          id={section.id}
+          key={index}
+        ></SectionItem>
       ))}
       <button
         onClick={handleClick}
@@ -65,10 +69,7 @@ export function ServiceCreatePage() {
         <button className="p-2 rounded text-white flex-1 bg-red-500">
           <FaTimes /> Cancelar
         </button>
-        <button
-          className="p-2 rounded text-white flex-1 bg-green-500"
-          onClick={saveService}
-        >
+        <button onClick={saveService} className="p-2 rounded text-white flex-1 bg-green-500">
           <FaCheck /> Salvar
         </button>
       </div>
