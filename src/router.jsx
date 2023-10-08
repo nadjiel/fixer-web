@@ -12,6 +12,7 @@ import { AccountDemandsPage } from "./account/AccountDemandsPage";
 import { AccountLikesPage } from "./account/AccountLikesPage";
 import { DemandPage } from "./demand/DemandPage";
 import { EditAccountPage } from "./account/EditAccountPage";
+import { CreateDemandPage } from "./demand/CreateDemandPage";
 
 const router = createBrowserRouter([
   {
@@ -31,12 +32,12 @@ const router = createBrowserRouter([
     element: <EditDemandPage />,
   },
   {
-    path: "/demands/:id",
-    element: <DemandPage />,
+    path: "/demands/create",
+    element: <CreateDemandPage />,
   },
   {
-    path: "/demands/create",
-    element: <EditDemandPage />,
+    path: "/demands/:id",
+    element: <DemandPage />,
   },
   {
     path: "/services",
