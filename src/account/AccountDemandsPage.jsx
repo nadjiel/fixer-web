@@ -5,13 +5,12 @@ import { NavBar } from "../navBar/NavBar";
 import { useAuth } from "../auth/AuthContext";
 
 export function AccountDemandsPage() {
-  const { user } = useAuth();
+  const { userId } = useAuth();
   const [demands, setDemands] = useState();
 
   async function getDemands() {
     // TODO use the real route
-    const res = await api.get("/demands?userId=" + user.id);
-    console.log(res.data);
+    const res = await api.get("/demands?userId=" + userId);
     setDemands(res.data);
   }
 

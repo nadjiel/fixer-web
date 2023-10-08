@@ -5,17 +5,21 @@ import { FaHeart } from "react-icons/fa";
 import { api } from "../api";
 
 export function LikeButton({ count, demand }) {
-  const [pressed, setPressed] = useState(false);
+  const [pressed, setPressed] = useState(demand.supported_by_logged_user);
 
   async function handleClick(e) {
     e.preventDefault();
     e.stopPropagation();
-    setPressed(!pressed);
 
-    const res = await api.post(`/supports/`, {
-      user: 1,
-      demand: demand.id,
-    });
+    if (pressed) {
+    } else {
+      await api.post(`/supports/`, {
+        user: 1,
+        demand: demand.id,
+      });
+    }
+
+    setPressed(!pressed);
   }
 
   const displayCount = (count || 0) + pressed ? 1 : 0;
