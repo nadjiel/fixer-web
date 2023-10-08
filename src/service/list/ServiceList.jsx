@@ -8,7 +8,7 @@ export function ServiceList({ services }) {
   return (
     <div className="gap-2">
       {services.map((service) => (
-        <ServiceItem className="cursor-pointer" service={service} />
+        <ServiceItem key={service} service={service} />
       ))}
     </div>
   );
