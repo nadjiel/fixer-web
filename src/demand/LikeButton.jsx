@@ -2,15 +2,23 @@ import { IoHeartCircle } from "react-icons/io5";
 import { primaryColor } from "../primaryColor";
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { api } from "../api";
 
-export function LikeButton({ count }) {
+export function LikeButton({ count, demand }) {
   const [pressed, setPressed] = useState(false);
 
-  function handleClick(e) {
+  async function handleClick(e) {
     e.preventDefault();
     e.stopPropagation();
     setPressed(!pressed);
+
+    const res = await api.post(`/supports/`, {
+      user: 1,
+      demand: demand.id,
+    });
   }
+
+  const displayCount = (count || 0) + pressed ? 1 : 0;
 
   return (
     <button
@@ -22,7 +30,7 @@ export function LikeButton({ count }) {
       ) : (
         <FaHeart color={primaryColor} size={26} className="scale-[.6]" />
       )}
-      {count || 0} apoios
+      {displayCount} apoios
     </button>
   );
 }

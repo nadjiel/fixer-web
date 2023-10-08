@@ -10,7 +10,7 @@ export function DemandItem({ demand }) {
     >
       <div>{demand.text}</div>
       <div className="flex-row items-start justify-between self-stretch">
-        <LikeButton count={demand.likesCount} />
+        <LikeButton count={demand.likesCount} demand={demand} />
         <StatusLabel status={demand.status}></StatusLabel>
       </div>
     </Link>
