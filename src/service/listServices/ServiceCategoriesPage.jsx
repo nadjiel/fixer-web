@@ -10,8 +10,8 @@ export function ServiceCategoriesPage() {
           Serviços ofertados
         </h1>
         <div className="flex flex-col gap-5">
-          {categories.map((category) => (
-            <CategoryItem category={category} />
+          {categories.map((category, index) => (
+            <CategoryItem category={category} key={index} />
           ))}
         </div>
       </div>
