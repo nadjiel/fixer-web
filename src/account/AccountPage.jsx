@@ -45,13 +45,13 @@ export function AccountPage() {
         </Link>
         <Link
           to="/accountDemands"
-          className="justify-center bg-secondary-default p-2 rounded-lg"
+          className="justify-center bg-secondary-200 p-2 rounded-lg"
         >
           <BiCommentError /> Demandas feitas
         </Link>
         <Link
           to="/account/edit"
-          className="justify-center bg-secondary-default p-2 rounded-lg"
+          className="justify-center bg-secondary-200 p-2 rounded-lg"
         >
           <HiOutlinePencil /> Editar conta
         </Link>

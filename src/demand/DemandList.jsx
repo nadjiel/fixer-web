@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { DemandItem } from "./DemandItem";
 
 export function DemandList({ demands }) {
