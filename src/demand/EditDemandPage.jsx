@@ -7,18 +7,36 @@ import {
 } from "react-icons/ai";
 import { NavBar } from "../navBar/NavBar";
 import { CreateDemandInput } from "./CreateDemandInput";
-import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { api } from "../api";
 
-export function CreateDemandPage() {
-  const navigate = useNavigate();
+export function EditDemandPage() {
+  const { id } = useParams();
   const [text, setText] = useState("");
+  const [demand, setDemand] = useState();
+
+  async function getDemand() {
+    const res = await api.get(`/demands/${id}`);
+    console.log("here");
+    setDemand(res.data);
+    setText(res.data.text);
+  }
+
+  useEffect(() => {
+    getDemand();
+  }, []);
+
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    api.post("/demands/", { text });
-    navigate("/demands");
+    api.patch("/demands/" + id, { text });
+    navigate("/demands/" + id);
+  }
+
+  if (!demand) {
+    return <div>carregando</div>;
   }
 
   return (
@@ -29,7 +47,9 @@ export function CreateDemandPage() {
           className="h-full flex flex-col justify-between"
         >
           <div>
-            <h4 className="text-xl text-primary font-semibold">Nova demanda</h4>
+            <h4 className="text-xl text-primary font-semibold">
+              Editars demanda
+            </h4>
             <textarea
               value={text}
               placeholder="Escreva sua demanda"
