@@ -3,34 +3,25 @@ import { FaCheck, FaPlus, FaTimes } from "react-icons/fa";
 import { NavBar } from "../../navBar/NavBar";
 import { SectionItem } from "./SectionItem";
 import { api } from "../../api";
-// import { ModalError } from "../../modal/ModalError"
 import { useNavigate } from "react-router-dom";
 
 export function ServiceCreatePage() {
   const [title, setTitle] = useState("");
-  const objVoid = { name: "", text: "", id: "section-0" };
-  const [sections, setSections] = useState([objVoid]);
+  const emptySection = { name: "", text: "" };
+  const [sections, setSections] = useState([{ ...emptySection }]);
 
   const navigate = useNavigate();
 
   function handleClick() {
-    setSections((old) => [
-      ...old,
-      { ...objVoid, id: `section-${sections.length}` },
-    ]);
+    setSections((old) => [...old, { ...emptySection }]);
   }
 
   async function saveService() {
     try {
-      const filterSection = sections.map((obj) => {
-        console.log(obj);
-        const element = document.querySelector(`#${obj.id}`);
-        const name = element.querySelector("[name='section-name']").value;
-        const text = element.querySelector("[name='section-text']").value;
-        return { name, text };
-      });
-
-      const body = { title, sections: filterSection };
+      const filteredSections = sections.filter(
+        (section) => section.name || section.text
+      );
+      const body = { title, sections: filteredSections };
       const result = await api.post("/services", body);
 
       if (result.status == 201) {
@@ -59,17 +50,16 @@ export function ServiceCreatePage() {
           key={index}
         ></SectionItem>
       ))}
-      <button
-        onClick={handleClick}
-        className="p-2 rounded bg-blue-500 text-white"
-      >
-        <FaPlus /> Adicionar Seção
-      </button>
+      <div>
+        <button onClick={handleClick} className="big-button bg-gray-500">
+          <FaPlus /> Adicionar Seção
+        </button>
+      </div>
       <div className="flex-row gap-2 mt-auto">
-        <button className="p-2 rounded text-white flex-1 bg-red-500">
+        <button className="big-button bg-gray-500">
           <FaTimes /> Cancelar
         </button>
-        <button onClick={saveService} className="p-2 rounded text-white flex-1 bg-green-500">
+        <button onClick={saveService} className="big-button bg-red-600">
           <FaCheck /> Salvar
         </button>
       </div>

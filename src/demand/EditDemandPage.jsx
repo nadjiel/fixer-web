@@ -48,7 +48,7 @@ export function EditDemandPage() {
         >
           <div>
             <h4 className="text-xl text-primary font-semibold">
-              Editars demanda
+              Editar demanda
             </h4>
             <textarea
               value={text}
@@ -79,10 +79,10 @@ export function EditDemandPage() {
             />
           </div>
           <div className="flex flex-row gap-3 text-center mt-20">
-            <Link to="./.." className="button-demand bg-secondary-400">
+            <Link to="./.." className="big-button bg-secondary-400">
               <AiOutlineClose /> Cancelar
             </Link>
-            <button className="button-demand bg-primary">
+            <button className="big-button bg-primary">
               <AiOutlineCheck /> Salvar
             </button>
           </div>

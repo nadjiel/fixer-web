@@ -1,27 +1,35 @@
 import { useState } from "react";
 
-export function SectionItem({ section, id }) {
-  // const [name, setName] = useState(section.name);
-  // const [text, setText] = useState(section.text);
+export function SectionItem({ section }) {
+  const [state, setState] = useState();
+
+  function refresh() {
+    setState(Math.random());
+  }
 
   return (
-    <div className="p-2 rounded shadow bg-white" id={id}>
+    <div className="p-2 rounded shadow bg-white">
       <input
         required
         type="text"
-        name="section-name"
-        // value={name}
+        value={section.name}
         className="font-medium"
         placeholder="Nome da seção"
-        // onChange={(e) => setName(e.target.value)}
+        onChange={(e) => {
+          section.name = e.target.value;
+          refresh();
+        }}
       ></input>
       <input
         required
         type="text"
         name="section-text"
-        // value={text}
+        value={section.text}
         placeholder="Conteúdo da seção"
-        // onChange={(e) => setText(e.target.value)}
+        onChange={(e) => {
+          section.text = e.target.value;
+          refresh();
+        }}
       ></input>
     </div>
   );
