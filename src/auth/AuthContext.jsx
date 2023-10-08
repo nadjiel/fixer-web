@@ -6,7 +6,14 @@ export function AuthContextProvider({ children }) {
   const [userId, setUserId] = useState();
 
   return (
-    <authContext.Provider value={{ userId, setUserId }}>{children}</authContext.Provider>
+    <authContext.Provider
+      value={{
+        userId,
+        setUserId,
+      }}
+    >
+      {children}
+    </authContext.Provider>
   );
 }
 
