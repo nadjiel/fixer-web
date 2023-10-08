@@ -7,6 +7,9 @@ import { Link } from "react-router-dom";
 import { login } from "./loginFunction";
 import { ButtonsLogin } from "./ButtonsLogin";
 
+import { IoMdLock } from "react-icons/io"
+import { AiOutlineMail, AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+
 export function SignInPage() {
   const schema = yup.object({
     email: yup
@@ -61,6 +64,7 @@ export function SignInPage() {
           <EditInput
             inputName="E-mail"
             typeInput="email"
+            Icon={AiOutlineMail}
             placeholder="Digite aqui seu e-mail..."
             errors={errors}
             register={register}
@@ -69,6 +73,7 @@ export function SignInPage() {
           <EditInput
             inputName="Senha"
             typeInput="password"
+            Icon={IoMdLock}
             placeholder="Digite sua senha..."
             errors={errors}
             register={register}
