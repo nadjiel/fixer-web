@@ -1,24 +1,34 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { DemandItem } from "./DemandItem";
 import { api } from "../api";
 import { NavBar } from "../navBar/NavBar";
 import { FaPen, FaTrash } from "react-icons/fa";
-import { Modal } from "../navBar/Modal";
 import { DeleteModal } from "./DeleteModal";
 
 export function DemandPage() {
+  const [open, setOpen] = useState(false);
   const [demand, setDemand] = useState();
-  const params = useParams();
+  const navigate = useNavigate();
+
+  const { id } = useParams();
 
   async function getDemand() {
-    const res = await api.get(`/demands/${params.id}`);
+    const res = await api.get(`/demands/${id}`);
     setDemand(res.data);
   }
 
   useEffect(() => {
     getDemand();
   }, []);
+
+  function close() {
+    setOpen(false);
+  }
+  async function handleConfirm() {
+    await api.delete("/demands/" + id);
+    navigate("/demands");
+  }
 
   if (!demand) {
     return <div>carregando</div>;
@@ -31,6 +41,7 @@ export function DemandPage() {
       <NavBar active={"Demandas"} />
       <div className="fixed bottom-20 z-10 right-0 p-5 w-full flex-row justify-between">
         <button
+          onClick={() => setOpen(true)}
           to={"/demands/" + demand.id + "/edit"}
           className="px-3 py-2 bg-red-500 text-white rounded-full font-medium text-base"
         >
@@ -43,7 +54,9 @@ export function DemandPage() {
           <FaPen /> Editar
         </Link>
       </div>
-      <DeleteModal isOpen={true}></DeleteModal>
+      {open && (
+        <DeleteModal isOpen={true} close={close} onConfirm={handleConfirm} />
+      )}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { MdDone } from "react-icons/md";
 
-export function DeleteModal({ isOpen, onClose }) {
+export function DeleteModal({ isOpen, close, onConfirm }) {
   if (!isOpen) return null;
 
   return (
@@ -12,10 +12,10 @@ export function DeleteModal({ isOpen, onClose }) {
       >
         <div className="font-medium">Você deseja mesmo apagar isso?</div>
         <div className="flex-row justify-around">
-          <button className="p-2" onClick={onClose}>
+          <button className="p-2" onClick={close}>
             <AiOutlineClose /> Cancelar
           </button>
-          <button className="p-2">
+          <button className="p-2" onClick={onConfirm}>
             <MdDone /> Confirmar
           </button>
         </div>
