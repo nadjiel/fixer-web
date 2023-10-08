@@ -7,18 +7,34 @@ import {
 } from "react-icons/ai";
 import { NavBar } from "../navBar/NavBar";
 import { CreateDemandInput } from "./CreateDemandInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { api } from "../api";
 
 export function CreateDemandPage() {
+  const navigate = useNavigate();
+  const [text, setText] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    api.post("/demands/", { text });
+    navigate("/demands");
+  }
+
   return (
     <>
       <div className="container-sm h-max flex flex-col items-cente px-5 py-6 space-y-3 pb-14">
-        <form className="h-full flex flex-col justify-between">
+        <form
+          onSubmit={handleSubmit}
+          className="h-full flex flex-col justify-between"
+        >
           <div>
             <h4 className="text-xl text-primary font-semibold">Nova demanda</h4>
             <textarea
-              className="p-2 text-base font-normal h-32 border-2 border-secondary-400 rounded-xl my-3"
+              value={text}
               placeholder="Escreva sua demanda"
+              onChange={(e) => setText(e.target.value)}
+              className="p-2 text-base font-normal h-32 border-2 border-secondary-400 rounded-xl my-3"
             ></textarea>
             <CreateDemandInput
               labelValue={"Adicionar imagem:"}
