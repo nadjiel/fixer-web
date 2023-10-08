@@ -8,7 +8,6 @@ import { login } from "./loginFunction";
 import { ButtonsLogin } from "./ButtonsLogin";
 import { timeTokenAccess, timeTokenRefresh } from "./config";
 import Cookies from "js-cookie";
-import { useAuth } from "./AuthContext";
 import { IoMdLock } from "react-icons/io";
 import { AiOutlineMail } from "react-icons/ai";
 
@@ -30,23 +29,16 @@ export function SignInPage() {
   } = useForm({ resolver: yupResolver(schema) });
 
   const navigate = useNavigate();
-  const { setUserId } = useAuth();
 
   const callbackLogin = async () => {
     try {
       const { email, password } = getValues();
-      const response = await login({ username: email, password });
-      if (response.token) {
-        Cookies.set("access", response.token.access, {
-          expires: timeTokenAccess,
-        });
-        Cookies.set("refresh", response.token.refresh, {
-          expires: timeTokenRefresh,
-        });
-        setUserId(response.id);
-        navigate("/account");
-      }
+      const { access, refresh } = await login({ username: email, password });
+      Cookies.set("access", access, { expires: timeTokenAccess });
+      Cookies.set("refresh", refresh, { expires: timeTokenRefresh });
+      navigate("/account");
     } catch (error) {
+      console.error(error);
       if (error.name === "AxiosError") {
         const { status } = error.response;
         if (status === 401) {
