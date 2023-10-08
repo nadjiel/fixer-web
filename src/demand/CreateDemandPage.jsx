@@ -17,7 +17,7 @@ export function CreateDemandPage() {
           <div>
             <h4 className="text-xl text-primary font-semibold">Nova demanda</h4>
             <textarea
-              className="p-2 text-base text-secondary-400 font-normal h-32 border-2 border-secondary-400 rounded-xl my-3"
+              className="p-2 text-base font-normal h-32 border-2 border-secondary-400 rounded-xl my-3"
               placeholder="Escreva sua demanda"
             ></textarea>
             <CreateDemandInput
