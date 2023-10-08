@@ -7,6 +7,7 @@ import {
 } from "react-icons/ai";
 import { NavBar } from "../navBar/NavBar";
 import { CreateDemandInput } from "./CreateDemandInput";
+import { Link } from "react-router-dom";
 
 export function CreateDemandPage() {
   return (
@@ -42,9 +43,9 @@ export function CreateDemandPage() {
             />
           </div>
           <div className="flex flex-row gap-3 text-center mt-20">
-            <button className="button-demand bg-secondary-400">
+            <Link to="./.." className="button-demand bg-secondary-400">
               <AiOutlineClose /> Cancelar
-            </button>
+            </Link>
             <button className="button-demand bg-primary">
               <AiOutlineCheck /> Salvar
             </button>

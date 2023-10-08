@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaCheck, FaPlus, FaTimes } from "react-icons/fa";
 import { NavBar } from "../../navBar/NavBar";
 import { SectionItem } from "./SectionItem";
+import { Link } from "react-router-dom";
 
 export function ServiceCreatePage() {
   const [title, setTitle] = useState("");
@@ -30,10 +31,10 @@ export function ServiceCreatePage() {
         <FaPlus /> Adicionar Seção
       </button>
       <div className="flex-row gap-2 mt-auto">
-        <button className="p-2 rounded text-white flex-1 bg-red-500">
+        <Link to="./.." className="mb-10 p-2 rounded text-white flex-1 bg-red-500">
           <FaTimes /> Cancelar
-        </button>
-        <button className="p-2 rounded text-white flex-1 bg-green-500">
+        </Link>
+        <button className="mb-10 p-2 rounded text-white flex-1 bg-green-500">
           <FaCheck /> Salvar
         </button>
       </div>
