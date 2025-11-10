@@ -1,0 +1,54 @@
+# Node dependencies
+node_modules
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.vite
+
+# Output directories
+dist
+build
+
+# Local env files (Vite bakes vars at build time)
+.env
+.env.*
+
+
+# OS / Editor / IDE
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Project files to ignore
+.git
+.gitignore
+.gitattributes
+
+# Logs
+logs
+*.log
+
+# Docker
+docker-compose.yml
+Dockerfile*
+.dockerignore
+
+# Testing
+coverage
+.vscode
+.idea
+*.test.ts
+*.test.tsx
+
+# Cache
+*.cache
+.cache
+.tmp
+temp
+tmp
+
+# Misc
+*.bak
+*.local
