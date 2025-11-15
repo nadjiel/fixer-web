@@ -23,7 +23,7 @@ jobs:
           docker build \
             --target builder \
             --build-arg VITE_API_URL=${{ secrets.API_URL }} \
-            --build-arg BASE_URL=${{ secrets.BASE_URL }} \
+            --build-arg VITE_BASE_URL=${{ secrets.BASE_URL }} \
             -t fixer .
 
       - name: Extract dist

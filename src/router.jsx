@@ -17,83 +17,87 @@ import { CreateDemandPage } from "./demand/CreateDemandPage";
 import { ServiceEditPage } from "./service/edit/ServiceEditPage";
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <ServiceCategoriesPage />,
-  },
-  {
-    path: "/dev",
-    element: <DevPage />,
-  },
-  {
-    path: "/demands",
-    element: <DemandsPage />,
-  },
-  {
-    path: "/demands/:id/edit",
-    element: <EditDemandPage />,
-  },
-  {
-    path: "/demands/create",
-    element: <CreateDemandPage />,
-  },
-  {
-    path: "/demands/:id",
-    element: <DemandPage />,
-  },
-  {
-    path: "/demands/code/:code",
-    element: <DemandPage />,
-  },
-  {
-    path: "/services",
-    element: <ServiceCategoriesPage />,
-  },
-  {
-    path: "/services/category/:category",
-    element: <ServicesPage />,
-  },
-  {
-    path: "/services/category/:category/:id",
-    element: <ServicePage />,
-  },
-  {
-    path: "/services/category/:category/create",
-    element: <ServiceCreatePage />,
-  },
-  {
-    path: "/services/:id/edit",
-    element: <ServiceEditPage />,
-  },
-  {
-    path: "/services/:id",
-    element: <ServicePage />,
-  },
-  {
-    path: "/account",
-    element: <AccountPage />,
-  },
-  {
-    path: "/account/edit",
-    element: <EditAccountPage />,
-  },
-  {
-    path: "/signIn",
-    element: <SignInPage />,
-  },
-  {
-    path: "/signUp",
-    element: <SignUpPage />,
-  },
-  {
-    path: "/accountDemands",
-    element: <AccountDemandsPage />,
-  },
-  {
-    path: "/accountLikes",
-    element: <AccountLikesPage />,
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <ServiceCategoriesPage />,
+    },
+    {
+      path: "/dev",
+      element: <DevPage />,
+    },
+    {
+      path: "/demands",
+      element: <DemandsPage />,
+    },
+    {
+      path: "/demands/:id/edit",
+      element: <EditDemandPage />,
+    },
+    {
+      path: "/demands/create",
+      element: <CreateDemandPage />,
+    },
+    {
+      path: "/demands/:id",
+      element: <DemandPage />,
+    },
+    {
+      path: "/demands/code/:code",
+      element: <DemandPage />,
+    },
+    {
+      path: "/services",
+      element: <ServiceCategoriesPage />,
+    },
+    {
+      path: "/services/category/:category",
+      element: <ServicesPage />,
+    },
+    {
+      path: "/services/category/:category/:id",
+      element: <ServicePage />,
+    },
+    {
+      path: "/services/category/:category/create",
+      element: <ServiceCreatePage />,
+    },
+    {
+      path: "/services/:id/edit",
+      element: <ServiceEditPage />,
+    },
+    {
+      path: "/services/:id",
+      element: <ServicePage />,
+    },
+    {
+      path: "/account",
+      element: <AccountPage />,
+    },
+    {
+      path: "/account/edit",
+      element: <EditAccountPage />,
+    },
+    {
+      path: "/signIn",
+      element: <SignInPage />,
+    },
+    {
+      path: "/signUp",
+      element: <SignUpPage />,
+    },
+    {
+      path: "/accountDemands",
+      element: <AccountDemandsPage />,
+    },
+    {
+      path: "/accountLikes",
+      element: <AccountLikesPage />,
+    },
+  ], {
+    basename: import.meta.env.VITE_BASE_URL,
+  }
+);
 
 export default router;
