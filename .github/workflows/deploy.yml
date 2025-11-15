@@ -19,7 +19,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build project
-        run: docker build --target builder --build-arg VITE_API_URL=${{ secrets.API_URL }} -t fixer .
+        run: |
+          docker build \
+            --target builder
+            --build-arg VITE_API_URL=${{ secrets.API_URL }}
+            --build-arg BASE_URL=${{ secrets.BASE_URL }}
+            -t fixer .
 
       - name: Extract dist
         run: |
