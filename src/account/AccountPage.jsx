@@ -3,6 +3,7 @@ import { BiCommentError, BiHeart } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { MdLogout } from "react-icons/md";
 import { HiOutlinePencil } from "react-icons/hi";
+import { FaUser as UserIcon } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { api } from "../api";
 import { AccountStatistics } from "./AccountStatistics";
@@ -28,12 +29,7 @@ export function AccountPage() {
   return (
     <div className="items-center gap-10 p-2">
       <div className="items-center">
-        <img
-          width={64}
-          height={64}
-          className="rounded-full"
-          src="https://github.com/yolisses.png"
-        />
+        <UserIcon className="w-16 h-16 p-2 mb-2 rounded-full bg-primary text-white" />
         <h2 className="font-bold text-xl text-primary">{user.name}</h2>
         <div className="text-sm text-primary">{user.email}</div>
       </div>
