@@ -15,7 +15,7 @@ import { DemandPage } from "./demand/DemandPage";
 import { EditAccountPage } from "./account/EditAccountPage";
 import { CreateDemandPage } from "./demand/CreateDemandPage";
 import { ServiceEditPage } from "./service/edit/ServiceEditPage";
-import { authLoader } from "./router/lib";
+import { authLoader, devLoader } from "./router/lib";
 
 
 const router = createBrowserRouter(
@@ -27,6 +27,7 @@ const router = createBrowserRouter(
     {
       path: "/dev",
       element: <DevPage />,
+      loader: devLoader,
     },
     {
       path: "/demands",
