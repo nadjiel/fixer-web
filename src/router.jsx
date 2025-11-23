@@ -23,6 +23,7 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <ServiceCategoriesPage />,
+      loader: authLoader,
     },
     {
       path: "/dev",
@@ -32,22 +33,27 @@ const router = createBrowserRouter(
     {
       path: "/demands",
       element: <DemandsPage />,
+      loader: authLoader,
     },
     {
       path: "/demands/:id/edit",
       element: <EditDemandPage />,
+      loader: authLoader,
     },
     {
       path: "/demands/create",
       element: <CreateDemandPage />,
+      loader: authLoader,
     },
     {
       path: "/demands/:id",
       element: <DemandPage />,
+      loader: authLoader,
     },
     {
       path: "/demands/code/:code",
       element: <DemandPage />,
+      loader: authLoader,
     },
     {
       path: "/services",
@@ -62,26 +68,32 @@ const router = createBrowserRouter(
     {
       path: "/services/category/:category/:id",
       element: <ServicePage />,
+      loader: authLoader,
     },
     {
       path: "/services/category/:category/create",
       element: <ServiceCreatePage />,
+      loader: authLoader,
     },
     {
       path: "/services/:id/edit",
       element: <ServiceEditPage />,
+      loader: authLoader,
     },
     {
       path: "/services/:id",
       element: <ServicePage />,
+      loader: authLoader,
     },
     {
       path: "/account",
       element: <AccountPage />,
+      loader: authLoader,
     },
     {
       path: "/account/edit",
       element: <EditAccountPage />,
+      loader: authLoader,
     },
     {
       path: "/signIn",
@@ -94,10 +106,12 @@ const router = createBrowserRouter(
     {
       path: "/accountDemands",
       element: <AccountDemandsPage />,
+      loader: authLoader,
     },
     {
       path: "/accountLikes",
       element: <AccountLikesPage />,
+      loader: authLoader,
     },
   ], {
     basename: import.meta.env.VITE_BASE_URL,
