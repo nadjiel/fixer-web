@@ -51,6 +51,7 @@ const router = createBrowserRouter(
     {
       path: "/services",
       element: <ServiceCategoriesPage />,
+      loader: authLoader,
     },
     {
       path: "/services/category/:category",
