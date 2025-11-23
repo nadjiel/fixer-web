@@ -7,12 +7,14 @@ import { FaUser as UserIcon } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import { api } from "../api";
 import { AccountStatistics } from "./AccountStatistics";
+import { Loader } from "../common/pages";
 
 export function AccountPage() {
   const [user, setUser] = useState();
 
   async function getUser() {
     const res = await api.get("/users/me/");
+
     setUser(res.data);
   }
 
@@ -20,11 +22,7 @@ export function AccountPage() {
     getUser();
   }, []);
 
-  // if (!user) {
-  //   return window.location.assign("/signIn");
-  // }
-
-  if (!user) return <div>carregando...</div>;
+  if (!user) return <Loader />;
 
   return (
     <div className="items-center gap-10 p-2">
