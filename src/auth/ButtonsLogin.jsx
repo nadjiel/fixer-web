@@ -15,7 +15,7 @@ export function ButtonsLogin({ typePage, callback }) {
 
       <Link
         className="bg-primary-ligth text-sm text-primary rounded-lg p-4 font-medium flex justify-center align-center mt-2 mb-3"
-        href={typePage == "login" ?  "/signIn" : "/signUp"}
+        to={typePage == "login" ?  "/signup" : "/signin"}
       >
         <p>{typePage != "login" ? "Fazer login" : "Criar conta"}</p>
       </Link>
