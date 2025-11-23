@@ -41,13 +41,13 @@ const router = createBrowserRouter(
       loader: authLoader,
     },
     {
-      path: "/demands/create",
-      element: <CreateDemandPage />,
+      path: "/demands/:id",
+      element: <DemandPage />,
       loader: authLoader,
     },
     {
-      path: "/demands/:id",
-      element: <DemandPage />,
+      path: "/demands/create",
+      element: <CreateDemandPage />,
       loader: authLoader,
     },
     {
