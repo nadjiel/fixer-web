@@ -18,12 +18,12 @@ export function SignUpPage() {
     email: yup
       .string()
       .email("Digite um email valido")
-      .required("É nescessário informar um email"),
-    password: yup.string().required("É nescessário informar a senha"),
+      .required("É necessário informar seu email"),
+    password: yup.string().required("É necessário informar sua senha"),
     password_confirm: yup
       .string()
       .oneOf([yup.ref("password"), null], "As senhas devem ser iguais")
-      .required("Confirme a senha"),
+      .required("Confirme sua senha"),
   });
 
   const {

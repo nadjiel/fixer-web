@@ -16,8 +16,8 @@ export function SignInPage() {
     email: yup
       .string()
       .email("Digite um email valido")
-      .required("É nescessário informar um email"),
-    password: yup.string().required("É nescessário informar a senha"),
+      .required("É necessário informar seu email"),
+    password: yup.string().required("É necessário informar sua senha"),
   });
 
   const {
