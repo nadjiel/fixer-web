@@ -1,6 +1,6 @@
 import { NavBar } from "../navBar/NavBar";
 import { BiCommentError, BiHeart } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdLogout } from "react-icons/md";
 import { HiOutlinePencil } from "react-icons/hi";
 import { FaUser as UserIcon } from "react-icons/fa6";
@@ -8,14 +8,21 @@ import { useEffect, useState } from "react";
 import { api } from "../api";
 import { AccountStatistics } from "./AccountStatistics";
 import { Loader } from "../common/pages";
+import { signout } from "../auth/lib"
 
 export function AccountPage() {
   const [user, setUser] = useState();
+  const navigate = useNavigate();
 
   async function getUser() {
     const res = await api.get("/users/me/");
 
     setUser(res.data);
+  }
+  
+  const handleSignout = () => {
+    signout();
+    navigate("/signin");
   }
 
   useEffect(() => {
@@ -51,12 +58,12 @@ export function AccountPage() {
         >
           <HiOutlinePencil /> Editar conta
         </Link>
-        <Link
-          to="/signin"
+        <button
+          onClick={handleSignout}
           className="justify-center bg-primary text-white p-2 rounded-lg"
         >
           <MdLogout /> Sair
-        </Link>
+        </button>
       </div>
       <NavBar active={"Conta"} />
     </div>
