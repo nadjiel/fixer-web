@@ -34,13 +34,13 @@ export function AccountPage() {
       <AccountStatistics user={user} />
       <div className="text-primary gap-2">
         <Link
-          to="/accountLikes"
+          to="/my-likes"
           className="justify-center bg-secondary-200 p-2 rounded-lg"
         >
           <BiHeart /> Demandas apoiadas
         </Link>
         <Link
-          to="/accountDemands"
+          to="/my-demands"
           className="justify-center bg-secondary-200 p-2 rounded-lg"
         >
           <BiCommentError /> Demandas feitas
@@ -52,7 +52,7 @@ export function AccountPage() {
           <HiOutlinePencil /> Editar conta
         </Link>
         <Link
-          to="/signIn"
+          to="/signin"
           className="justify-center bg-primary text-white p-2 rounded-lg"
         >
           <MdLogout /> Sair

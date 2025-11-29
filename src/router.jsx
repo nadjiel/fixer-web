@@ -96,20 +96,20 @@ const router = createBrowserRouter(
       loader: authLoader,
     },
     {
-      path: "/signIn",
+      path: "/signin",
       element: <SignInPage />,
     },
     {
-      path: "/signUp",
+      path: "/signup",
       element: <SignUpPage />,
     },
     {
-      path: "/accountDemands",
+      path: "/my-demands",
       element: <AccountDemandsPage />,
       loader: authLoader,
     },
     {
-      path: "/accountLikes",
+      path: "/my-likes",
       element: <AccountLikesPage />,
       loader: authLoader,
     },

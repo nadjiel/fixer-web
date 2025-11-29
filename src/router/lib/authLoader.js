@@ -8,7 +8,7 @@ import { isAuthenticated } from "../../auth/lib";
  */
 export default async function authLoader() {
   if (!isAuthenticated()) {
-    throw redirect("/signIn");
+    throw redirect("/signin");
   }
   
   return null;
