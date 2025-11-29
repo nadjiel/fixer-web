@@ -34,11 +34,14 @@ export function SignInPage() {
     try {
       const { email, password } = getValues();
       const { access, refresh } = await login({ username: email, password });
+
       Cookies.set("access", access, { expires: timeTokenAccess });
       Cookies.set("refresh", refresh, { expires: timeTokenRefresh });
+      
       navigate("/account");
     } catch (error) {
       console.error(error);
+      
       if (error.name === "AxiosError") {
         const { status } = error.response;
         if (status === 401) {

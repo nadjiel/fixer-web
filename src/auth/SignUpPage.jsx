@@ -1,36 +1,33 @@
+import { useState } from "react";
 import { EditInput } from "./EditInput";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { ButtonsLogin } from "./ButtonsLogin";
-import { register as registerService } from "./registerFunction"
+import { signup } from "./lib";
 
 import { IoMdLock } from "react-icons/io";
-import {
-  AiOutlineMail,
-  AiOutlineEye,
-  AiOutlineEyeInvisible,
-} from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
+
+const schema = yup.object({
+  email: yup
+    .string()
+    .email("Digite um email valido")
+    .required("É necessário informar seu email"),
+  password: yup.string().required("É necessário informar sua senha"),
+  password_confirm: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "As senhas devem ser iguais")
+    .required("Confirme sua senha"),
+});
 
 export function SignUpPage() {
-  const schema = yup.object({
-    email: yup
-      .string()
-      .email("Digite um email valido")
-      .required("É necessário informar seu email"),
-    password: yup.string().required("É necessário informar sua senha"),
-    password_confirm: yup
-      .string()
-      .oneOf([yup.ref("password"), null], "As senhas devem ser iguais")
-      .required("Confirme sua senha"),
-  });
-
+  const [error, setError] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
     getValues,
   } = useForm({ resolver: yupResolver(schema) });
 
@@ -38,21 +35,15 @@ export function SignUpPage() {
 
   const callbackRegister = async () => {
     try {
-        const { email, password, password_confirm } = getValues();
-        if (password === password_confirm) {
-            const user = await registerService({ username: email, email, password });
-            if (user.id) {
-                navigate("/login");
-            }
-        }
+      const { email, password } = getValues();
+      
+      await signup({ username: email, email, password });
+      
+      navigate("/signin");
     } catch (error) {
-        if (error.name === "AxiosError") {
-            const { data, status } = error.response
-            if (status === 409) {
-                const field = data.field;
-                setError(field, { type: "customn", message: data.message });
-            }
-        }
+      console.error(error)
+
+      setError("Ocorreu um erro inesperado!");
     }
 };
 
@@ -91,7 +82,9 @@ export function SignUpPage() {
             name="password_confirm"
           />
 
-          <ButtonsLogin typePage="register" callback={callbackRegister} />
+          <p className="text-primary text-center my-2 text-sm">{error}</p>
+
+          <ButtonsLogin typePage="register"/*  callback={callbackRegister} */ />
         </form>
       </div>
     </div>
