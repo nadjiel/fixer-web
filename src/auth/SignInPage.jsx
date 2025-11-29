@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
-import { login } from "./loginFunction";
+import { signin } from "./lib";
 import { ButtonsLogin } from "./ButtonsLogin";
 import { timeTokenAccess, timeTokenRefresh } from "./config";
 import Cookies from "js-cookie";
@@ -33,7 +32,7 @@ export function SignInPage() {
   const callbackLogin = async () => {
     try {
       const { email, password } = getValues();
-      const { access, refresh } = await login({ username: email, password });
+      const { access, refresh } = await signin({ username: email, password });
 
       Cookies.set("access", access, { expires: timeTokenAccess });
       Cookies.set("refresh", refresh, { expires: timeTokenRefresh });
