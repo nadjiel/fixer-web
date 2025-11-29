@@ -15,7 +15,8 @@ import { DemandPage } from "./demand/DemandPage";
 import { EditAccountPage } from "./account/EditAccountPage";
 import { CreateDemandPage } from "./demand/CreateDemandPage";
 import { ServiceEditPage } from "./service/edit/ServiceEditPage";
-import { authLoader, devLoader } from "./router/lib";
+import { redirectorLoader, authLoader, devLoader } from "./router/lib";
+import { isAuthenticated } from "./auth/lib";
 
 
 const router = createBrowserRouter(
@@ -98,10 +99,12 @@ const router = createBrowserRouter(
     {
       path: "/signin",
       element: <SignInPage />,
+      loader: redirectorLoader("/account", isAuthenticated),
     },
     {
       path: "/signup",
       element: <SignUpPage />,
+      loader: redirectorLoader("/account", isAuthenticated),
     },
     {
       path: "/my-demands",
