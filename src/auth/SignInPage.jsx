@@ -82,12 +82,12 @@ export function SignInPage() {
             name="password"
             data-cy="login-password"
           />
-          <Link
+          {/* <Link
             to="#"
             className="font-medium text-xs self-end mt-2 text-secondary-400 underline"
           >
             Esqueci a senha
-          </Link>
+          </Link> */}
 
           <ButtonsLogin typePage="login" />
         </form>
