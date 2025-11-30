@@ -9,12 +9,12 @@ export function AccountStatistics({ user }) {
       <div className="items-center gap-1 flex-row">
         <IoHeartCircle color={primaryColor} size={26} />
         Total de demandas apoiadas:{" "}
-        <div className="font-medium">{user.demandsCount}</div>
+        <div className="font-medium">{user.total_supports}</div>
       </div>
       <div className="items-center gap-1 flex-row">
         <BiCommentError color={primaryColor} size={26} />
         Total de demandas feitas:{" "}
-        <div className="font-medium">{user.likesCount}</div>
+        <div className="font-medium">{user.total_demands}</div>
       </div>
     </div>
   );
