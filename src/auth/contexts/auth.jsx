@@ -1,4 +1,4 @@
-import { createContext, useContext, useReducer } from "react";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import * as lib from "../lib";
 import Cookies from "js-cookie";
 
@@ -47,9 +47,19 @@ function reducer(state, action) {
 /**
  * Auth context provider that can give access to data
  * and operation related to the auth state.
+ * By default, this context tries to fetch the current user
+ * on mount.
  */
-export default function Provider({ children }) {
+export default function Provider({ children, autoload = true }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    if(state.user) return;
+
+    if(autoload) {
+      loadSelf()
+    };
+  }, []);
   
   /**
    * Signs up a user to the API, storing any errors that
