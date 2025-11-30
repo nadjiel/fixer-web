@@ -3,14 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { signin } from "./lib";
 import { ButtonsLogin } from "./ButtonsLogin";
-import { timeTokenAccess, timeTokenRefresh } from "./config";
-import Cookies from "js-cookie";
 import { IoMdLock } from "react-icons/io";
 import { AiOutlineMail } from "react-icons/ai";
+import { useAuth } from "./contexts";
+import { useEffect } from "react";
 
 export function SignInPage() {
+  const navigate = useNavigate();
+  const { user, signin } = useAuth();
+
   const schema = yup.object({
     email: yup
       .string()
@@ -23,39 +25,19 @@ export function SignInPage() {
     register,
     handleSubmit,
     formState: { errors },
-    setError,
     getValues,
   } = useForm({ resolver: yupResolver(schema) });
 
-  const navigate = useNavigate();
-
-  const callbackLogin = async () => {
-    try {
-      const { email, password } = getValues();
-      const { access, refresh } = await signin({ username: email, password });
-
-      Cookies.set("access", access, { expires: timeTokenAccess });
-      Cookies.set("refresh", refresh, { expires: timeTokenRefresh });
-      
-      navigate("/account");
-    } catch (error) {
-      console.error(error);
-      
-      if (error.name === "AxiosError") {
-        const { status } = error.response;
-        if (status === 401) {
-          setError("email", {
-            type: "customn",
-            message: "Usuário ou senha incorreto",
-          });
-          setError("password", {
-            type: "customn",
-            message: "Usuário ou senha incorreto",
-          });
-        }
-      }
-    }
+  const handleSignin = () => {
+    const { email, password } = getValues();
+    signin({ username: email, password });
   };
+
+  useEffect(() => {
+    if(!user) return;
+
+    navigate("/account");
+  }, [user]);
 
   return (
     <div className="w-full min-h-screen flex justify-center align-center gap-3 p-5 font-medium">
@@ -63,7 +45,7 @@ export function SignInPage() {
         <h1 className="text-primary text-base align-center mb-6 font-semibold text-center">
           Login
         </h1>
-        <form onSubmit={handleSubmit(callbackLogin)} className="flex flex-col">
+        <form onSubmit={handleSubmit(handleSignin)} className="flex flex-col">
           <EditInput
             inputName="E-mail"
             typeInput="email"
