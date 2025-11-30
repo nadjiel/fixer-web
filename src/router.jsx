@@ -15,6 +15,8 @@ import { DemandPage } from "./demand/DemandPage";
 import { EditAccountPage } from "./account/EditAccountPage";
 import { CreateDemandPage } from "./demand/CreateDemandPage";
 import { ServiceEditPage } from "./service/edit/ServiceEditPage";
+import { redirectorLoader, authLoader, devLoader } from "./router/lib";
+import { isAuthenticated } from "./auth/lib";
 
 
 const router = createBrowserRouter(
@@ -22,78 +24,97 @@ const router = createBrowserRouter(
     {
       path: "/",
       element: <ServiceCategoriesPage />,
+      loader: authLoader,
     },
     {
       path: "/dev",
       element: <DevPage />,
+      loader: devLoader,
     },
     {
       path: "/demands",
       element: <DemandsPage />,
+      loader: authLoader,
     },
     {
       path: "/demands/:id/edit",
       element: <EditDemandPage />,
-    },
-    {
-      path: "/demands/create",
-      element: <CreateDemandPage />,
+      loader: authLoader,
     },
     {
       path: "/demands/:id",
       element: <DemandPage />,
+      loader: authLoader,
+    },
+    {
+      path: "/demands/create",
+      element: <CreateDemandPage />,
+      loader: authLoader,
     },
     {
       path: "/demands/code/:code",
       element: <DemandPage />,
+      loader: authLoader,
     },
     {
       path: "/services",
       element: <ServiceCategoriesPage />,
+      loader: authLoader,
     },
     {
       path: "/services/category/:category",
       element: <ServicesPage />,
+      loader: authLoader,
     },
     {
       path: "/services/category/:category/:id",
       element: <ServicePage />,
+      loader: authLoader,
     },
     {
       path: "/services/category/:category/create",
       element: <ServiceCreatePage />,
+      loader: authLoader,
     },
     {
       path: "/services/:id/edit",
       element: <ServiceEditPage />,
+      loader: authLoader,
     },
     {
       path: "/services/:id",
       element: <ServicePage />,
+      loader: authLoader,
     },
     {
       path: "/account",
       element: <AccountPage />,
+      loader: authLoader,
     },
     {
       path: "/account/edit",
       element: <EditAccountPage />,
+      loader: authLoader,
     },
     {
-      path: "/signIn",
+      path: "/signin",
       element: <SignInPage />,
+      loader: redirectorLoader("/account", isAuthenticated),
     },
     {
-      path: "/signUp",
+      path: "/signup",
       element: <SignUpPage />,
+      loader: redirectorLoader("/account", isAuthenticated),
     },
     {
-      path: "/accountDemands",
+      path: "/my-demands",
       element: <AccountDemandsPage />,
+      loader: authLoader,
     },
     {
-      path: "/accountLikes",
+      path: "/my-likes",
       element: <AccountLikesPage />,
+      loader: authLoader,
     },
   ], {
     basename: import.meta.env.VITE_BASE_URL,

@@ -1,12 +1,12 @@
 import {
   AiOutlineClose,
   AiOutlineCheck,
-  AiOutlineMail,
-  AiOutlinePhone,
-  AiOutlineFileImage,
+  // AiOutlineMail,
+  // AiOutlinePhone,
+  // AiOutlineFileImage,
 } from "react-icons/ai";
 import { NavBar } from "../navBar/NavBar";
-import { CreateDemandInput } from "./CreateDemandInput";
+// import { CreateDemandInput } from "./CreateDemandInput";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../api";
@@ -40,7 +40,7 @@ export function CreateDemandPage() {
               onChange={(e) => setText(e.target.value)}
               className="p-2 text-base font-normal h-32 border-2 border-secondary-400 rounded-lg my-3 bg-secondary-200"
             ></textarea>
-            <CreateDemandInput
+            {/* <CreateDemandInput
               labelValue={"Adicionar imagem:"}
               typeInput={"file"}
               inputId={"file"}
@@ -60,7 +60,7 @@ export function CreateDemandPage() {
               inputId={"telephone"}
               placeholderValue={"(83) 99999-9999"}
               Icon={AiOutlinePhone}
-            />
+            /> */}
           </div>
           <div className="flex flex-row gap-3 text-center mt-20">
             <Link to="./.." className="big-button bg-secondary-500 ">
