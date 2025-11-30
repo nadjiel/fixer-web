@@ -3,41 +3,54 @@ import { primaryColor } from "../primaryColor";
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { api } from "../api";
+import { useAuth } from "../auth/contexts";
+import { AiOutlineLoading3Quarters as LoadingIcon } from "react-icons/ai";
 
 export function LikeButton({ demand }) {
-  const [pressed, setPressed] = useState(demand.supported_by_logged_user);
+  const [supported, setSupported] = useState(demand.supported_by_logged_user);
+  const [supports, setSupports] = useState(demand.supports);
+  const [loading, setLoading] = useState(false);
+
+  const { user } = useAuth();
 
   async function handleClick(e) {
     e.preventDefault();
     e.stopPropagation();
 
     try {
-      if (pressed) {
+      setLoading(true);
+
+      if (supported) {
+        await api.post(`/demands/${demand.id}/unsupport/`);
+        
+        setSupported(false);
+        setSupports(s => s - 1);
       } else {
-        await api.post(`/supports/`, {
-          user: 1,
-          demand: demand.id,
-        });
+        await api.post(`/demands/${demand.id}/support/`);
+        
+        setSupported(true);
+        setSupports(s => s + 1);
       }
-    } catch {}
-
-    setPressed(!pressed);
+    } catch(error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   }
-
-  console.log(demand.likesCount);
-  const displayCount = (demand.likesCount || 0) + (pressed ? 1 : 0);
 
   return (
     <button
       onClick={handleClick}
       className="gap-1 items-center flex-row text-sm hover:bg-black/10 rounded p-2"
     >
-      {pressed ? (
-        <IoHeartCircle color={primaryColor} size={26} />
-      ) : (
-        <FaHeart color={primaryColor} size={26} className="scale-[.6]" />
-      )}
-      {displayCount} apoios
+      {
+        loading
+          ? <LoadingIcon color={primaryColor} size={26} className="animate-spin p-1" />
+          : supported
+          ? <IoHeartCircle color={primaryColor} size={26} />
+          : <FaHeart color={primaryColor} size={26} className="scale-[.6]" />
+      }
+      {supports} apoios
     </button>
   );
 }
