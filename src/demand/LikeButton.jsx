@@ -3,15 +3,12 @@ import { primaryColor } from "../primaryColor";
 import { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { api } from "../api";
-import { useAuth } from "../auth/contexts";
 import { AiOutlineLoading3Quarters as LoadingIcon } from "react-icons/ai";
 
 export function LikeButton({ demand }) {
   const [supported, setSupported] = useState(demand.supported_by_logged_user);
   const [supports, setSupports] = useState(demand.supports);
   const [loading, setLoading] = useState(false);
-
-  const { user } = useAuth();
 
   async function handleClick(e) {
     e.preventDefault();
