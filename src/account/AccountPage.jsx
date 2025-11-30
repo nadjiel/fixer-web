@@ -52,12 +52,13 @@ export function AccountPage() {
         >
           <BiCommentError /> Demandas feitas
         </Link>
-        <Link
+        {/* TODO: Account editing */}
+        {/* <Link
           to="/account/edit"
           className="justify-center bg-secondary-200 p-2 rounded-lg"
         >
           <HiOutlinePencil /> Editar conta
-        </Link>
+        </Link> */}
         <button
           onClick={handleSignout}
           className="justify-center bg-primary text-white p-2 rounded-lg"
