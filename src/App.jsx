@@ -9,7 +9,7 @@ function App() {
   return (
     <React.StrictMode>
       <GoogleOAuthProvider clientId="717882556861-bdjcihh9ih7hgguvrf2pdh1o7i6hoc6k.apps.googleusertext.com">
-        <AuthProvider>
+        <AuthProvider autoload={false}>
           <RouterProvider router={router} />
         </AuthProvider>
       </GoogleOAuthProvider>

@@ -6,11 +6,16 @@ import { FaUser as UserIcon } from "react-icons/fa6";
 import { AccountStatistics } from "./AccountStatistics";
 import { Loader } from "../common/pages";
 import { useAuth } from "../auth/contexts";
+import { useEffect } from "react";
 
 export function AccountPage() {
-  const { user, loading, signout } = useAuth();
+  const { user, loading, signout, loadSelf } = useAuth();
   const navigate = useNavigate();
   
+  useEffect(() => {
+    loadSelf();
+  }, []);
+
   const handleSignout = () => {
     signout();
 
