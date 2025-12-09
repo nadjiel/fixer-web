@@ -11,7 +11,7 @@ import { useEffect } from "react";
 
 export function SignInPage() {
   const navigate = useNavigate();
-  const { user, signin } = useAuth();
+  const { user, error, signin } = useAuth();
 
   const schema = yup.object({
     email: yup
@@ -72,6 +72,7 @@ export function SignInPage() {
           >
             Esqueci a senha
           </Link> */}
+          <p className="text-primary text-center my-2 text-sm">{error && "Houve um erro ao realizar o login. Tente novamente."}</p>
 
           <ButtonsLogin typePage="login" />
         </form>
